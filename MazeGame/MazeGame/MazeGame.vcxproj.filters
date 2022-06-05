@@ -1,84 +1,82 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
+    <Filter Include="ProgramFiles">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Source Files\maze">
-      <UniqueIdentifier>{fc1ce90e-f7e7-4fe9-81d9-26c122d40026}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\maze">
+    <Filter Include="ProgramFiles\maze">
       <UniqueIdentifier>{de85a8db-604d-4886-ad8c-1c98c41b7893}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\maze\Neighbour">
+    <Filter Include="ProgramFiles\maze\Neighbour">
       <UniqueIdentifier>{043607c8-0327-4208-ba88-4d65b73077e6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\maze\Neighbour">
-      <UniqueIdentifier>{9e839048-c459-4e6f-ba18-58f97a968d23}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\maze\MazeCell">
+    <Filter Include="ProgramFiles\maze\MazeCell">
       <UniqueIdentifier>{48255ca7-f3c3-4bf2-b5de-1ef48b5069f4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\maze\MazeCell">
-      <UniqueIdentifier>{cab56aba-ca9a-4c96-9ea2-1ded0dd79d47}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\maze\MazeGenerator">
+    <Filter Include="ProgramFiles\maze\MazeGenerator">
       <UniqueIdentifier>{c52f8967-603c-4db9-bccf-82f82b8f4b4e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\maze\MazrGenerator">
-      <UniqueIdentifier>{f0b0bb01-b0c1-4757-8115-96d591c4b2ac}</UniqueIdentifier>
+    <Filter Include="ProgramFiles\maze\MazeGenerator\SquareMazeGeneratorClass">
+      <UniqueIdentifier>{500c27f3-f5e8-45a7-847f-55adc9f0e410}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProgramFiles\maze\MazeCell\SquareMazeCellClass">
+      <UniqueIdentifier>{cb81cfbc-88a1-465c-831c-9656675ceebc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProgramFiles\maze\MazeCell\MazeCellClass">
+      <UniqueIdentifier>{06de9f72-2d87-4a57-a145-10aa55235afb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProgramFiles\maze\MazeGenerator\MazeGeneratorClass">
+      <UniqueIdentifier>{5701694d-d516-4f2f-95c3-217b8b1ecf7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProgramFiles\maze\Neighbour\SquareNeighbourClass">
+      <UniqueIdentifier>{09f3c323-f107-4f92-bf82-1bbc459ee552}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProgramFiles\maze\Neighbour\NeighbourClass">
+      <UniqueIdentifier>{38cdb37e-6b4a-4c84-b2e6-53481ae31adf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MazeCell.cpp">
-      <Filter>Source Files\maze\MazeCell</Filter>
-    </ClCompile>
-    <ClCompile Include="MazeGenerator.cpp">
-      <Filter>Source Files\maze\MazrGenerator</Filter>
-    </ClCompile>
     <ClCompile Include="SquareMazeCell.cpp">
-      <Filter>Source Files\maze\MazeCell</Filter>
-    </ClCompile>
-    <ClCompile Include="Neighbour.cpp">
-      <Filter>Source Files\maze\Neighbour</Filter>
-    </ClCompile>
-    <ClCompile Include="SquareNeighbour.cpp">
-      <Filter>Source Files\maze\Neighbour</Filter>
+      <Filter>ProgramFiles\maze\MazeCell\SquareMazeCellClass</Filter>
     </ClCompile>
     <ClCompile Include="SquareMazeGenerator.cpp">
-      <Filter>Source Files\maze\MazrGenerator</Filter>
+      <Filter>ProgramFiles\maze\MazeGenerator\SquareMazeGeneratorClass</Filter>
+    </ClCompile>
+    <ClCompile Include="SquareNeighbour.cpp">
+      <Filter>ProgramFiles\maze\Neighbour\SquareNeighbourClass</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>ProgramFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="MazeCell.cpp">
+      <Filter>ProgramFiles\maze\MazeCell\MazeCellClass</Filter>
+    </ClCompile>
+    <ClCompile Include="MazeGenerator.cpp">
+      <Filter>ProgramFiles\maze\MazeGenerator\MazeGeneratorClass</Filter>
+    </ClCompile>
+    <ClCompile Include="Neighbour.cpp">
+      <Filter>ProgramFiles\maze\Neighbour\NeighbourClass</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MazeCell.h">
-      <Filter>Header Files\maze\MazeCell</Filter>
-    </ClInclude>
-    <ClInclude Include="MazeGenerator.h">
-      <Filter>Header Files\maze\MazeGenerator</Filter>
-    </ClInclude>
     <ClInclude Include="SquareMazeCell.h">
-      <Filter>Header Files\maze\MazeCell</Filter>
-    </ClInclude>
-    <ClInclude Include="Neighbour.h">
-      <Filter>Header Files\maze\Neighbour</Filter>
-    </ClInclude>
-    <ClInclude Include="SquareNeighbour.h">
-      <Filter>Header Files\maze\Neighbour</Filter>
+      <Filter>ProgramFiles\maze\MazeCell\SquareMazeCellClass</Filter>
     </ClInclude>
     <ClInclude Include="SquareMazeGenerator.h">
-      <Filter>Header Files\maze\MazeGenerator</Filter>
+      <Filter>ProgramFiles\maze\MazeGenerator\SquareMazeGeneratorClass</Filter>
+    </ClInclude>
+    <ClInclude Include="SquareNeighbour.h">
+      <Filter>ProgramFiles\maze\Neighbour\SquareNeighbourClass</Filter>
+    </ClInclude>
+    <ClInclude Include="MazeCell.h">
+      <Filter>ProgramFiles\maze\MazeCell\MazeCellClass</Filter>
+    </ClInclude>
+    <ClInclude Include="MazeGenerator.h">
+      <Filter>ProgramFiles\maze\MazeGenerator\MazeGeneratorClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Neighbour.h">
+      <Filter>ProgramFiles\maze\Neighbour\NeighbourClass</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

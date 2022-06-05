@@ -1,8 +1,8 @@
 ﻿#include "SquareMazeGenerator.h"
 
-MazeCell* SquareMazeGenerator::getAccessToCellIndicatedByVector(const std::pair<int, int> pCellCoordinates, const  std::pair<int, int> pVector)
+MazeCell* SquareMazeGenerator::getAccessToCellIndicatedByVector(const std::pair<int, int> pCellCoordinates, const  std::pair<int, int> pIndicativeVector)
 {
-	return maze[pCellCoordinates.first + pVector.first][pCellCoordinates.second + pVector.second];
+	return maze[pCellCoordinates.first + pIndicativeVector.first][pCellCoordinates.second + pIndicativeVector.second];
 }
 
 SquareMazeGenerator::SquareMazeGenerator(const int pMaxMazeX, const int pMaxMazeY, const std::pair<int, int>& pStartingCoordinates, const std::pair<int, int>& pFinishCoordinateS)

@@ -13,17 +13,17 @@ private:
 	std::pair<int, int> finishCoordinates;
 	std::vector<std::vector<MazeCell*>> maze;
 
-	virtual void mazeInicialization();
+	virtual void mazeInicialization(); //TO DO: zmieñ dzia³anie funkcji 
 
 public:
 
 	SquareMazeGenerator(const int pMaxMazeX, const int pMaxMazeY, const std::pair<int, int>& pStartingCoordinates, const std::pair<int, int>& pFinishCoordinateS);
 	~SquareMazeGenerator();
 
-	virtual int getMaxMazeX() = 0;
-	virtual int getMaxMazeY() = 0;
-	virtual MazeCell* getAccessToCellWithGivenCoordinates(std::pair<int, int> pCoordinates) = 0;
-	virtual MazeCell* getAccessToCellIndicatedByVector(const std::pair<int, int> pCellCoordinates, const std::pair<int, int> pVector) = 0;
+	int getMaxMazeX();
+	int getMaxMazeY();
+	MazeCell* getAccessToCellWithGivenCoordinates(std::pair<int, int> pCoordinates);
+	MazeCell* getAccessToCellIndicatedByVector(const std::pair<int, int> pCellCoordinates, const std::pair<int, int> pIndicativeVector);
 
 };
 

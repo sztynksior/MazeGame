@@ -10,5 +10,5 @@ SquareNeighbour::~SquareNeighbour()
 
 std::pair<int, int> SquareNeighbour::getPointingVector()
 {
-	return this->pointingVector;
+	return this->indicativeVector;
 }

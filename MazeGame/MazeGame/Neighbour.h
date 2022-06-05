@@ -5,7 +5,7 @@
 
 class Neighbour
 {
-	std::pair<int, int> pointingVector;
+	std::pair<int, int> indicativeVector;
 
 public:
 	Neighbour(std::pair<int, int> pPointingVector);

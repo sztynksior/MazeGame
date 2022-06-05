@@ -2,7 +2,7 @@
 
 Neighbour::Neighbour(std::pair<int, int> pPointingVector)
 {
-	this->pointingVector = pPointingVector;
+	this->indicativeVector = pPointingVector;
 }
 
 Neighbour::~Neighbour()

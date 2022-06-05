@@ -6,7 +6,7 @@
 
 class SquareNeighbour : public Neighbour
 {
-	std::pair<int, int> pointingVector;
+	std::pair<int, int> indicativeVector;
 
 public:
 	SquareNeighbour(std::pair<int, int> pPointingVector);
