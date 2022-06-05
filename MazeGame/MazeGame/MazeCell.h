@@ -1,10 +1,10 @@
 ﻿#ifndef MAZECELL_H
 #define MAZECELL_H
 
+#include "Neighbour.h"
 #include <vector>
 #include <utility>
-
-enum class fromWhichSide { Top, Right, Bottom, Left };
+#include <unordered_map>
 
 class MazeCell
 {
@@ -12,19 +12,20 @@ private:
 
 	std::pair<int, int> coordinates;
 	bool isVisited;
-	std::vector<fromWhichSide> neighbours;
+	std::unordered_map<std::string, Neighbour*> posibleNeighbours;
+	std::vector<Neighbour*> neighbours;
 
 public:
 
 	MazeCell(const std::pair<int, int> pCoordinates);
 	~MazeCell();
 
-	std::pair<int, int> getCoordinates();
-	void wasVisited();
-	bool whetherItWasVisited();
-	int numberOfNeigbours();
-	fromWhichSide getNeigbourFromVector(const int pIterator);
-	void addNeighbour(fromWhichSide pFromWhichSide);
+	virtual std::pair<int, int> getCoordinates() = 0;
+	virtual void wasVisited() = 0;
+	virtual bool whetherItWasVisited() = 0;
+	virtual int numberOfNeigbours() = 0;
+	virtual Neighbour* getNeigbourFromTable(const int pIterator) = 0;
+	virtual void addNeighbour(Neighbour* pNeighbour) = 0;
 
 	//TO DO: rozdziel klase MazeCell na:
 	//1. MazeCell klase szablonowa
