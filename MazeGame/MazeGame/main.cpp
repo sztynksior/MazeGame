@@ -46,22 +46,22 @@ int main()
         {
             for (int p = 0; p < maze1.getAccessToCellWithGivenCoordinates({ i, j })->numberOfNeigbours(); p++)
             {
-                if (maze1.getAccessToCellWithGivenCoordinates({ i, j })->getNeigbourFromVector(p) == fromWhichSide::Top)
+                if (maze1.getAccessToCellWithGivenCoordinates({ i, j })->getNeigbourFromTable(p) == fromWhichSide::Top)
                 {
                     gotoxy(i * cellWidth + 1, j * cellWidth - 1 + 1);
                     std::cout << " ";
                 }
-                else if (maze1.getAccessToCellWithGivenCoordinates({ i, j })->getNeigbourFromVector(p) == fromWhichSide::Right)
+                else if (maze1.getAccessToCellWithGivenCoordinates({ i, j })->getNeigbourFromTable(p) == fromWhichSide::Right)
                 {
                     gotoxy(i * cellWidth + 1 + 1, j * cellWidth + 1);
                     std::cout << " ";
                 }
-                else if (maze1.getAccessToCellWithGivenCoordinates({ i, j })->getNeigbourFromVector(p) == fromWhichSide::Bottom)
+                else if (maze1.getAccessToCellWithGivenCoordinates({ i, j })->getNeigbourFromTable(p) == fromWhichSide::Bottom)
                 {
                     gotoxy(i * cellWidth + 1, j * cellWidth + 1 + 1);
                     std::cout << " ";
                 }
-                else if (maze1.getAccessToCellWithGivenCoordinates({ i, j })->getNeigbourFromVector(p) == fromWhichSide::Left)
+                else if (maze1.getAccessToCellWithGivenCoordinates({ i, j })->getNeigbourFromTable(p) == fromWhichSide::Left)
                 {
                     gotoxy(i * cellWidth - 1 + 1, j * cellWidth + 1);
                     std::cout << " ";

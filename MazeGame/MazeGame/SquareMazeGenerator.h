@@ -1,12 +1,10 @@
-#ifndef MAZEGENERATOR_H
-#define MAZEGENERATOR_H
+#ifndef SQUAREMAZEGENERATOR_H
+#define SQUAREMAZEGENERATOR_H
 
-#include "MazeCell.h"
-#include <vector>
-#include <utility>
-#include <stack>
+#include "MazeGenerator.h"
+#include "SquareMazeCell.h"
 
-class MazeGenerator
+class SquareMazeGenerator : public MazeGenerator
 {
 private:
 
@@ -19,14 +17,14 @@ private:
 
 public:
 
-
-	MazeGenerator(const int pMaxMazeX, const int pMaxMazeY, const std::pair<int, int>& pStartingCoordinates, const std::pair<int, int>& pFinishCoordinateS);
-	~MazeGenerator();
+	SquareMazeGenerator(const int pMaxMazeX, const int pMaxMazeY, const std::pair<int, int>& pStartingCoordinates, const std::pair<int, int>& pFinishCoordinateS);
+	~SquareMazeGenerator();
 
 	virtual int getMaxMazeX() = 0;
 	virtual int getMaxMazeY() = 0;
 	virtual MazeCell* getAccessToCellWithGivenCoordinates(std::pair<int, int> pCoordinates) = 0;
 	virtual MazeCell* getAccessToCellIndicatedByVector(const std::pair<int, int> pCellCoordinates, const std::pair<int, int> pVector) = 0;
+
 };
 
-#endif // !MAZEGENERATOR_H
+#endif // !SQUAREMAZEGENERATOR_H

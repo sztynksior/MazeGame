@@ -2,7 +2,6 @@
 #define SQUAREMAZECELL_H
 
 #include "MazeCell.h"
-#include "Neighbour.h"
 #include "SquareNeighbour.h"
 #include <utility>
 #include <unordered_map>
