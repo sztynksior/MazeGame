@@ -25,7 +25,7 @@ public:
 	virtual bool whetherItWasVisited() = 0;
 	virtual int numberOfNeigbours() = 0;
 	virtual Neighbour* getNeigbourFromTable(const int pIterator) = 0;
-	virtual void addNeighbour(Neighbour* pNeighbour) = 0;
+	virtual void addNeighbour(std::string pNeighbourType) = 0;
 
 	//TO DO: rozdziel klase MazeCell na:
 	//1. MazeCell klase szablonowa
