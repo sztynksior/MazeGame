@@ -2,8 +2,10 @@
 
 SquareMazeCell::SquareMazeCell(const std::pair<int, int> pCoordinates) : MazeCell(pCoordinates)
 {
-	this->posibleNeighbours.insert({ { "TOP_NEIGHBOUR", new SquareNeighbour({0, -1}) }, { "RIGHT_NEIGHBOUR", new SquareNeighbour({ 1, 0 }) },
-	{ "BOTTOM_NEIGHBOUR", new SquareNeighbour({ 0, 1 }) }, { "LEFT_NEIGHBOUR", new SquareNeighbour({ -1, 0 }) } });
+	this->posibleNeighbours.insert({ "TOP_NEIGHBOUR", new SquareNeighbour({0, -1}) });
+	this->posibleNeighbours.insert({ "RIGHT_NEIGHBOUR", new SquareNeighbour({ 1, 0 }) });
+	this->posibleNeighbours.insert({ "BOTTOM_NEIGHBOUR", new SquareNeighbour({ 0, 1 }) });
+	this->posibleNeighbours.insert({ "LEFT_NEIGHBOUR", new SquareNeighbour({ -1, 0 }) });
 }
 
 SquareMazeCell::~SquareMazeCell()
