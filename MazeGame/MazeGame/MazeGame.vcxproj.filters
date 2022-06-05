@@ -13,10 +13,36 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\maze">
+      <UniqueIdentifier>{fc1ce90e-f7e7-4fe9-81d9-26c122d40026}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\maze">
+      <UniqueIdentifier>{de85a8db-604d-4886-ad8c-1c98c41b7893}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="maincpp.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MazeGenerator.cpp">
+      <Filter>Source Files\maze</Filter>
+    </ClCompile>
+    <ClCompile Include="MazeCell.cpp">
+      <Filter>Source Files\maze</Filter>
+    </ClCompile>
+    <ClCompile Include="SquareMazeCell.cpp">
+      <Filter>Source Files\maze</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MazeGenerator.h">
+      <Filter>Header Files\maze</Filter>
+    </ClInclude>
+    <ClInclude Include="MazeCell.h">
+      <Filter>Header Files\maze</Filter>
+    </ClInclude>
+    <ClInclude Include="SquareMazeCell.h">
+      <Filter>Header Files\maze</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

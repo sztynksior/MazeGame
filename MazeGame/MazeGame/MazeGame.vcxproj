@@ -127,7 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="maincpp.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MazeCell.cpp" />
+    <ClCompile Include="MazeGenerator.cpp" />
+    <ClCompile Include="SquareMazeCell.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MazeCell.h" />
+    <ClInclude Include="MazeGenerator.h" />
+    <ClInclude Include="SquareMazeCell.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
