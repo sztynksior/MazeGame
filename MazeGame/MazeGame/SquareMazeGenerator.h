@@ -3,13 +3,15 @@
 
 #include "MazeGenerator.h"
 #include "SquareMazeCell.h"
+#include <cstdlib>
+#include <ctime>
 
 class SquareMazeGenerator : public MazeGenerator
 {
 private:
 
 	virtual void mazeInicialization();
-	std::pair<int, int> lookingForNeighbours(std::pair<int, int> pCellCoordinates);
+	void lookingForNeighbours(std::vector<std::pair<int, int>>& pNotVisitedNeighbours, std::pair<int, int> pCellCoordinates);
 
 public:
 

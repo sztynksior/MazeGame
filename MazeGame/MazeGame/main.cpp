@@ -46,8 +46,8 @@ int main()
             for (int p = 0; p < maze1->getAccessToCellWithGivenCoordinates({ i, j })->numberOfNeigbours(); p++)
             {
                 std::pair<int, int> chuj{1, 1};
-                gotoxy({ i * cellWidth + maze1->getAccessToCellWithGivenCoordinates({ i, j })->getNeigbourFromTable(p).first,  
-                j * cellWidth + maze1->getAccessToCellWithGivenCoordinates({ i, j })->getNeigbourFromTable(p).second });
+                gotoxy({ i * cellWidth + maze1->getAccessToCellWithGivenCoordinates({ i, j })->getNeigbourFromTable(p).first + 1,  
+                j * cellWidth + maze1->getAccessToCellWithGivenCoordinates({ i, j })->getNeigbourFromTable(p).second + 1});
                 std::cout << " ";
             }
         }

@@ -41,6 +41,8 @@ MazeCell* SquareMazeGenerator::getAccessToCellWithGivenCoordinates(std::pair<int
 
 void SquareMazeGenerator::mazeInicialization()
 {
+	srand(time(NULL));
+
 	std::stack<std::pair<int, int>> cellsOnStack;
 	const int numberOfCellsToVisit = this->maxMazeX * this->maxMazeY;
 	int numberOFVisitedCells = 0;
@@ -51,31 +53,7 @@ void SquareMazeGenerator::mazeInicialization()
 	{
 		std::vector<std::pair<int, int>> notVisitedNeighbours;
 
-		//TO DO: przenieœ te ify do osobnej funkcji
-
-		//looking for top neighbour
-		if (cellsOnStack.top().second > 0 and this->getAccessToCellIndicatedByVector(cellsOnStack.top(), { 0, -1 })->whetherItWasVisited() == false)
-		{
-			notVisitedNeighbours.push_back({ 0, -1 });
-		}
-
-		//looking for right neighbour
-		if (cellsOnStack.top().first < (this->maxMazeX - 1) and this->getAccessToCellIndicatedByVector(cellsOnStack.top(), { 1, 0 })->whetherItWasVisited() == false)
-		{
-			notVisitedNeighbours.push_back({ 1, 0 });
-		}
-
-		//looking for bottom neighbour
-		if (cellsOnStack.top().second < (this->maxMazeY - 1) and this->getAccessToCellIndicatedByVector(cellsOnStack.top(), { 0, 1 })->whetherItWasVisited() == false)
-		{
-			notVisitedNeighbours.push_back({ 0, 1 });
-		}
-
-		//looking for left neighbour
-		if (cellsOnStack.top().first > 0 and this->getAccessToCellIndicatedByVector(cellsOnStack.top(), { -1, 0 })->whetherItWasVisited() == false)
-		{
-			notVisitedNeighbours.push_back({ -1, 0 });
-		}
+		this->lookingForNeighbours(notVisitedNeighbours, cellsOnStack.top());
 
 		//TO DO: przenieœ tego ifa do osobnej funkcji
 
@@ -99,29 +77,29 @@ void SquareMazeGenerator::mazeInicialization()
 	}
 }
 
-std::pair<int, int> SquareMazeGenerator::lookingForNeighbours(std::pair<int, int> pCellCoordinates)
+void SquareMazeGenerator::lookingForNeighbours(std::vector<std::pair<int, int>>& pNotVisitedNeighbours, std::pair<int, int> pCellCoordinates)
 {
 	//looking for top neighbour
 	if (pCellCoordinates.second > 0 and this->getAccessToCellIndicatedByVector(pCellCoordinates, { 0, -1 })->whetherItWasVisited() == false)
 	{
-		return { 0, -1 };
+		pNotVisitedNeighbours.push_back({ 0, -1 });
 	}
 
 	//looking for right neighbour
 	if (pCellCoordinates.first < (this->maxMazeX - 1) and this->getAccessToCellIndicatedByVector(pCellCoordinates, { 1, 0 })->whetherItWasVisited() == false)
 	{
-		return { 1, 0 };
+		pNotVisitedNeighbours.push_back({ 1, 0 });
 	}
 
 	//looking for bottom neighbour
 	if (pCellCoordinates.second < (this->maxMazeY - 1) and this->getAccessToCellIndicatedByVector(pCellCoordinates, { 0, 1 })->whetherItWasVisited() == false)
 	{
-		return { 0, 1 };
+		pNotVisitedNeighbours.push_back({ 0, 1 });
 	}
 
 	//looking for left neighbour
 	if (pCellCoordinates.first > 0 and this->getAccessToCellIndicatedByVector(pCellCoordinates, { -1, 0 })->whetherItWasVisited() == false)
 	{
-		return { -1, 0 };
+		pNotVisitedNeighbours.push_back({ -1, 0 });
 	}
 }
