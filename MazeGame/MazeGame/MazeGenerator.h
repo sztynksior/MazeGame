@@ -18,7 +18,6 @@ protected:
 private:
 
 	virtual void mazeInicialization() = 0;
-	virtual void lookingForNeighbours(std::vector<std::pair<int, int>>& pNotVisitedNeighbours, std::pair<int, int> pCellCoordinates) = 0;
 
 public:
 
