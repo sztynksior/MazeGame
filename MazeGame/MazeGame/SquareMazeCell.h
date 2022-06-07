@@ -2,7 +2,6 @@
 #define SQUAREMAZECELL_H
 
 #include "MazeCell.h"
-#include "SquareNeighbour.h"
 #include <utility>
 #include <unordered_map>
 
@@ -12,8 +11,7 @@ private:
 
 	std::pair<int, int> coordinates;
 	bool isVisited;
-	std::unordered_map<std::string, Neighbour*> posibleNeighbours;
-	std::vector<Neighbour*> neighbours;
+	std::vector<std::pair<int, int>> neighbours;
 
 public:
 
@@ -24,8 +22,8 @@ public:
 	void wasVisited();
 	bool whetherItWasVisited();
 	int numberOfNeigbours();
-	Neighbour* getNeigbourFromTable(const int pIterator);
-	void addNeighbour(std::string pNeighbourType);
+	std::pair<int, int> getNeigbourFromTable(const int pIterator);
+	void addNeighbour(std::pair<int, int> pNeighbourVector);
 };
 
 #endif // !SQUAREMAZECELL_H

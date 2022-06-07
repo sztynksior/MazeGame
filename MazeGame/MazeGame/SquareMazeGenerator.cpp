@@ -16,6 +16,8 @@ SquareMazeGenerator::SquareMazeGenerator(const int pMaxMazeX, const int pMaxMaze
 			this->maze[i].push_back(new SquareMazeCell({ i, j }));
 		}
 	}
+
+	this->mazeInicialization();
 }
 
 SquareMazeGenerator::~SquareMazeGenerator()
@@ -54,87 +56,46 @@ void SquareMazeGenerator::mazeInicialization()
 
 	while (numberOFVisitedCells < numberOfCellsToVisit)
 	{
-		std::vector<Neighbour*> notVisitedNeighbours;
+		std::vector<std::pair<int, int>> notVisitedNeighbours;
 
 		//TO DO: przenieœ te ify do osobnej funkcji
 
 		//looking for top neighbour
 		if (cellsOnStack.top().second > 0 and this->getAccessToCellIndicatedByVector(cellsOnStack.top(), { 0, -1 })->whetherItWasVisited() == false)
 		{
-			notVisitedNeighbours.push_back(fromWhichSide::Top);
+			notVisitedNeighbours.push_back({ 0, -1 });
 		}
 
 		//looking for right neighbour
 		if (cellsOnStack.top().first < (this->maxMazeX - 1) and this->getAccessToCellIndicatedByVector(cellsOnStack.top(), { 1, 0 })->whetherItWasVisited() == false)
 		{
-			notVisitedNeighbours.push_back(fromWhichSide::Right);
+			notVisitedNeighbours.push_back({ 1, 0 });
 		}
 
 		//looking for bottom neighbour
 		if (cellsOnStack.top().second < (this->maxMazeY - 1) and this->getAccessToCellIndicatedByVector(cellsOnStack.top(), { 0, 1 })->whetherItWasVisited() == false)
 		{
-			notVisitedNeighbours.push_back(fromWhichSide::Bottom);
+			notVisitedNeighbours.push_back({ 0, 1 });
 		}
 
 		//looking for left neighbour
 		if (cellsOnStack.top().first > 0 and this->getAccessToCellIndicatedByVector(cellsOnStack.top(), { -1, 0 })->whetherItWasVisited() == false)
 		{
-			notVisitedNeighbours.push_back(fromWhichSide::Left);
+			notVisitedNeighbours.push_back({ -1, 0 });
 		}
 
 		//TO DO: przenieœ tego ifa do osobnej funkcji
 
 		if (!notVisitedNeighbours.empty())
 		{
-			fromWhichSide nextNeighbour = notVisitedNeighbours[rand() % notVisitedNeighbours.size()]; //TO DO: zmieñ nazwe i sprawdŸ czy rand zwraca za ka¿dym razem inn¹ wartoœæ
+			std::pair<int, int> nextNeighbour = notVisitedNeighbours[rand() % notVisitedNeighbours.size()]; //TO DO: zmieñ nazwe i sprawdŸ czy rand zwraca za ka¿dym razem inn¹ wartoœæ
 
-			switch (nextNeighbour)
-			{
-			case fromWhichSide::Top:
-			{
-				this->getAccessToCellIndicatedByVector(cellsOnStack.top(), { 0, -1 })->wasVisited();
-				this->getAccessToCellIndicatedByVector(cellsOnStack.top(), { 0, -1 })->addNeighbour(fromWhichSide::Bottom);
+			this->getAccessToCellIndicatedByVector(cellsOnStack.top(), nextNeighbour)->wasVisited();
+			this->getAccessToCellIndicatedByVector(cellsOnStack.top(), nextNeighbour)->addNeighbour({ nextNeighbour.first * -1, nextNeighbour.second * -1 });
 
-				this->getAccessToCellWithGivenCoordinates(cellsOnStack.top())->addNeighbour(fromWhichSide::Top);
+			this->getAccessToCellWithGivenCoordinates(cellsOnStack.top())->addNeighbour(nextNeighbour);
 
-				cellsOnStack.push(this->getAccessToCellIndicatedByVector(cellsOnStack.top(), { 0 , -1 })->getCoordinates());
-
-				break;
-			}
-			case fromWhichSide::Right:
-			{
-				this->getAccessToCellIndicatedByVector(cellsOnStack.top(), { 1, 0 })->wasVisited();
-				this->getAccessToCellIndicatedByVector(cellsOnStack.top(), { 1, 0 })->addNeighbour(fromWhichSide::Left);
-
-				this->getAccessToCellWithGivenCoordinates(cellsOnStack.top())->addNeighbour(fromWhichSide::Right);
-
-				cellsOnStack.push(this->getAccessToCellIndicatedByVector(cellsOnStack.top(), { 1 , 0 })->getCoordinates());
-
-				break;
-			}
-			case fromWhichSide::Bottom:
-			{
-				this->getAccessToCellIndicatedByVector(cellsOnStack.top(), { 0, 1 })->wasVisited();
-				this->getAccessToCellIndicatedByVector(cellsOnStack.top(), { 0, 1 })->addNeighbour(fromWhichSide::Top);
-
-				this->getAccessToCellWithGivenCoordinates(cellsOnStack.top())->addNeighbour(fromWhichSide::Bottom);
-
-				cellsOnStack.push(this->getAccessToCellIndicatedByVector(cellsOnStack.top(), { 0 , 1 })->getCoordinates());
-
-				break;
-			}
-			case fromWhichSide::Left:
-			{
-				this->getAccessToCellIndicatedByVector(cellsOnStack.top(), { -1, 0 })->wasVisited();
-				this->getAccessToCellIndicatedByVector(cellsOnStack.top(), { -1, 0 })->addNeighbour(fromWhichSide::Right);
-
-				this->getAccessToCellWithGivenCoordinates(cellsOnStack.top())->addNeighbour(fromWhichSide::Left);
-
-				cellsOnStack.push(this->getAccessToCellIndicatedByVector(cellsOnStack.top(), { -1 , 0 })->getCoordinates());
-
-				break;
-			}
-			}
+			cellsOnStack.push(this->getAccessToCellIndicatedByVector(cellsOnStack.top(), nextNeighbour)->getCoordinates());
 
 			numberOFVisitedCells++;
 		}

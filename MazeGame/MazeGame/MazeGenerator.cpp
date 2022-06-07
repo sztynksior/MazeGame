@@ -3,13 +3,11 @@
 MazeGenerator::MazeGenerator(const int pMaxMazeX, const int pMaxMazeY, const std::pair<int, int>& pStartingCoordinates, const std::pair<int, int>& pFinishCoordinateS)
 {
 
-	this->maxMazeX = pMaxMazeX;
-	this->maxMazeY = pMaxMazeY;
+	maxMazeX = pMaxMazeX;
+	maxMazeY = pMaxMazeY;
 
-	this->startingCoordinates = pStartingCoordinates;
-	this->finishCoordinates = pFinishCoordinateS;
-
-	this->mazeInicialization();
+	startingCoordinates = pStartingCoordinates;
+	finishCoordinates = pFinishCoordinateS;
 }
 
 MazeGenerator::~MazeGenerator()

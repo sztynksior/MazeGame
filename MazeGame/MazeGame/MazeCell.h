@@ -1,19 +1,17 @@
 ﻿#ifndef MAZECELL_H
 #define MAZECELL_H
 
-#include "Neighbour.h"
 #include <vector>
 #include <utility>
 #include <unordered_map>
 
 class MazeCell
 {
-private:
+protected:
 
 	std::pair<int, int> coordinates;
 	bool isVisited;
-	std::unordered_map<std::string, Neighbour*> posibleNeighbours;
-	std::vector<Neighbour*> neighbours;
+	std::vector<std::pair<int, int>> neighbours;
 
 public:
 
@@ -24,15 +22,8 @@ public:
 	virtual void wasVisited() = 0;
 	virtual bool whetherItWasVisited() = 0;
 	virtual int numberOfNeigbours() = 0;
-	virtual Neighbour* getNeigbourFromTable(const int pIterator) = 0;
-	virtual void addNeighbour(std::string pNeighbourType) = 0;
-
-	//TO DO: rozdziel klase MazeCell na:
-	//1. MazeCell klase szablonowa
-	//2. SquareMazeCell klasa dziedzicz¹ca
-	//Pozwoli to w przysz³oœci na dodawanie klas MazeCell o ró¿nych kszta³tach
-	//np: TriangularMazeCell, PentagonalMazeCell itd.
-
+	virtual std::pair<int, int> getNeigbourFromTable(const int pIterator) = 0;
+	virtual void addNeighbour(std::pair<int, int> pNeighbourVector) = 0;
 };
 
 #endif // !MAZECELL_H

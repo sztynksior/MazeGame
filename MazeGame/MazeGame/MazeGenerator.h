@@ -15,7 +15,7 @@ private:
 	std::pair<int, int> finishCoordinates;
 	std::vector<std::vector<MazeCell*>> maze;
 
-	virtual void mazeInicialization();
+	virtual void mazeInicialization() = 0;
 
 public:
 

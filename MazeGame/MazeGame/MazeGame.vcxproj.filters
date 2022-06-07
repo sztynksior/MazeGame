@@ -8,9 +8,6 @@
     <Filter Include="ProgramFiles\maze">
       <UniqueIdentifier>{de85a8db-604d-4886-ad8c-1c98c41b7893}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ProgramFiles\maze\Neighbour">
-      <UniqueIdentifier>{043607c8-0327-4208-ba88-4d65b73077e6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ProgramFiles\maze\MazeCell">
       <UniqueIdentifier>{48255ca7-f3c3-4bf2-b5de-1ef48b5069f4}</UniqueIdentifier>
     </Filter>
@@ -29,12 +26,6 @@
     <Filter Include="ProgramFiles\maze\MazeGenerator\MazeGeneratorClass">
       <UniqueIdentifier>{5701694d-d516-4f2f-95c3-217b8b1ecf7c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ProgramFiles\maze\Neighbour\SquareNeighbourClass">
-      <UniqueIdentifier>{09f3c323-f107-4f92-bf82-1bbc459ee552}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ProgramFiles\maze\Neighbour\NeighbourClass">
-      <UniqueIdentifier>{38cdb37e-6b4a-4c84-b2e6-53481ae31adf}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SquareMazeCell.cpp">
@@ -42,9 +33,6 @@
     </ClCompile>
     <ClCompile Include="SquareMazeGenerator.cpp">
       <Filter>ProgramFiles\maze\MazeGenerator\SquareMazeGeneratorClass</Filter>
-    </ClCompile>
-    <ClCompile Include="SquareNeighbour.cpp">
-      <Filter>ProgramFiles\maze\Neighbour\SquareNeighbourClass</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>ProgramFiles</Filter>
@@ -55,9 +43,6 @@
     <ClCompile Include="MazeGenerator.cpp">
       <Filter>ProgramFiles\maze\MazeGenerator\MazeGeneratorClass</Filter>
     </ClCompile>
-    <ClCompile Include="Neighbour.cpp">
-      <Filter>ProgramFiles\maze\Neighbour\NeighbourClass</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SquareMazeCell.h">
@@ -66,17 +51,11 @@
     <ClInclude Include="SquareMazeGenerator.h">
       <Filter>ProgramFiles\maze\MazeGenerator\SquareMazeGeneratorClass</Filter>
     </ClInclude>
-    <ClInclude Include="SquareNeighbour.h">
-      <Filter>ProgramFiles\maze\Neighbour\SquareNeighbourClass</Filter>
-    </ClInclude>
     <ClInclude Include="MazeCell.h">
       <Filter>ProgramFiles\maze\MazeCell\MazeCellClass</Filter>
     </ClInclude>
     <ClInclude Include="MazeGenerator.h">
       <Filter>ProgramFiles\maze\MazeGenerator\MazeGeneratorClass</Filter>
-    </ClInclude>
-    <ClInclude Include="Neighbour.h">
-      <Filter>ProgramFiles\maze\Neighbour\NeighbourClass</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
