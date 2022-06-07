@@ -3,15 +3,16 @@
 MazeGenerator::MazeGenerator(const int pMaxMazeX, const int pMaxMazeY, const std::pair<int, int>& pStartingCoordinates, const std::pair<int, int>& pFinishCoordinateS)
 {
 
-	maxMazeX = pMaxMazeX;
-	maxMazeY = pMaxMazeY;
+	this->maxMazeX = pMaxMazeX;
+	this->maxMazeY = pMaxMazeY;
 
-	startingCoordinates = pStartingCoordinates;
-	finishCoordinates = pFinishCoordinateS;
+	this->startingCoordinates = pStartingCoordinates;
+	this->finishCoordinates = pFinishCoordinateS;
 }
 
 MazeGenerator::~MazeGenerator()
 {
+
 	for (int i = 0; i < this->maxMazeX; i++)
 	{
 		for (int j = 0; j < this->maxMazeY; j++)

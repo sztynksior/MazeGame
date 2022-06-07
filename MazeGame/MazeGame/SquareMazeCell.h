@@ -7,12 +7,6 @@
 
 class SquareMazeCell : public MazeCell
 {
-private:
-
-	std::pair<int, int> coordinates;
-	bool isVisited;
-	std::vector<std::pair<int, int>> neighbours;
-
 public:
 
 	SquareMazeCell(const std::pair<int, int> pCoordinates);

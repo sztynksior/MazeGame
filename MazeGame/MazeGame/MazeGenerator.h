@@ -8,14 +8,17 @@
 
 class MazeGenerator
 {
-private:
+protected:
 
 	int maxMazeX, maxMazeY;
 	std::pair<int, int> startingCoordinates;
 	std::pair<int, int> finishCoordinates;
 	std::vector<std::vector<MazeCell*>> maze;
 
+private:
+
 	virtual void mazeInicialization() = 0;
+	virtual std::pair<int, int> lookingForNeighbours(std::pair<int, int> pCellCoordinates) = 0;
 
 public:
 

@@ -8,12 +8,8 @@ class SquareMazeGenerator : public MazeGenerator
 {
 private:
 
-	int maxMazeX, maxMazeY;
-	std::pair<int, int> startingCoordinates;
-	std::pair<int, int> finishCoordinates;
-	std::vector<std::vector<MazeCell*>> maze;
-
-	virtual void mazeInicialization(); //TO DO: zmieñ dzia³anie funkcji 
+	virtual void mazeInicialization();
+	std::pair<int, int> lookingForNeighbours(std::pair<int, int> pCellCoordinates);
 
 public:
 

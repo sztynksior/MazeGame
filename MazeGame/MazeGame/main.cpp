@@ -48,6 +48,7 @@ int main()
                 std::pair<int, int> chuj{1, 1};
                 gotoxy({ i * cellWidth + maze1->getAccessToCellWithGivenCoordinates({ i, j })->getNeigbourFromTable(p).first,  
                 j * cellWidth + maze1->getAccessToCellWithGivenCoordinates({ i, j })->getNeigbourFromTable(p).second });
+                std::cout << " ";
             }
         }
     }
@@ -69,6 +70,8 @@ int main()
 
     gotoxy({ maze1->getMaxMazeX() * cellWidth - 1, maze1->getMaxMazeY() * cellWidth });
     std::cout << "@X";
+    
+    delete maze1;
 }
 
 //sfml-audio.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;

@@ -22,13 +22,6 @@ SquareMazeGenerator::SquareMazeGenerator(const int pMaxMazeX, const int pMaxMaze
 
 SquareMazeGenerator::~SquareMazeGenerator()
 {
-	for (int i = 0; i < this->maxMazeX; i++)
-	{
-		for (int j = 0; j < this->maxMazeY; j++)
-		{
-			delete this->maze[i][j];
-		}
-	}
 }
 
 int SquareMazeGenerator::getMaxMazeX()
@@ -103,5 +96,32 @@ void SquareMazeGenerator::mazeInicialization()
 		{
 			cellsOnStack.pop();
 		}
+	}
+}
+
+std::pair<int, int> SquareMazeGenerator::lookingForNeighbours(std::pair<int, int> pCellCoordinates)
+{
+	//looking for top neighbour
+	if (pCellCoordinates.second > 0 and this->getAccessToCellIndicatedByVector(pCellCoordinates, { 0, -1 })->whetherItWasVisited() == false)
+	{
+		return { 0, -1 };
+	}
+
+	//looking for right neighbour
+	if (pCellCoordinates.first < (this->maxMazeX - 1) and this->getAccessToCellIndicatedByVector(pCellCoordinates, { 1, 0 })->whetherItWasVisited() == false)
+	{
+		return { 1, 0 };
+	}
+
+	//looking for bottom neighbour
+	if (pCellCoordinates.second < (this->maxMazeY - 1) and this->getAccessToCellIndicatedByVector(pCellCoordinates, { 0, 1 })->whetherItWasVisited() == false)
+	{
+		return { 0, 1 };
+	}
+
+	//looking for left neighbour
+	if (pCellCoordinates.first > 0 and this->getAccessToCellIndicatedByVector(pCellCoordinates, { -1, 0 })->whetherItWasVisited() == false)
+	{
+		return { -1, 0 };
 	}
 }
