@@ -12,8 +12,7 @@ void gotoxy(std::pair<int, int> pPos)
 
 int main()
 {
-
-    MazeGenerator* maze1 = new SquareMazeGenerator(50, 15, { 1, 0 }, {49, 15});
+    MazeGenerator* maze1 = new SquareMazeGenerator(50, 15, { 1, 0 }, { 49, 15 });
     int cellWidth = 2; //TO DO: dodaj takie pole do klasy MazeCell
 
     for (int i = 0; i < maze1->getMaxMazeX(); i++)
@@ -31,7 +30,7 @@ int main()
                     }
                     else
                     {
-                        gotoxy({ i * cellWidth + nI + 1, j * cellWidth + nJ + 1 } );
+                        gotoxy({ i * cellWidth + nI + 1, j * cellWidth + nJ + 1 });
                         std::cout << "X";
                     }
                 }
@@ -45,9 +44,9 @@ int main()
         {
             for (int p = 0; p < maze1->getAccessToCellWithGivenCoordinates({ i, j })->numberOfNeigbours(); p++)
             {
-                std::pair<int, int> chuj{1, 1};
-                gotoxy({ i * cellWidth + maze1->getAccessToCellWithGivenCoordinates({ i, j })->getNeigbourFromTable(p).first + 1,  
-                j * cellWidth + maze1->getAccessToCellWithGivenCoordinates({ i, j })->getNeigbourFromTable(p).second + 1});
+                std::pair<int, int> chuj{ 1, 1 };
+                gotoxy({ i * cellWidth + maze1->getAccessToCellWithGivenCoordinates({ i, j })->getNeigbourFromTable(p).first + 1,
+                j * cellWidth + maze1->getAccessToCellWithGivenCoordinates({ i, j })->getNeigbourFromTable(p).second + 1 });
                 std::cout << " ";
             }
         }
@@ -65,13 +64,11 @@ int main()
         }
     }
 
-    gotoxy({ 1, 0 } );
+    gotoxy({ 1, 0 });
     std::cout << "@";
 
     gotoxy({ maze1->getMaxMazeX() * cellWidth - 1, maze1->getMaxMazeY() * cellWidth });
     std::cout << "@X";
-    
+
     delete maze1;
 }
-
-//sfml-audio.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;
