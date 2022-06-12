@@ -1,6 +1,8 @@
 #ifndef GAME_H
 #define GAME_H
+
 #include <SFML/Graphics.hpp>
+#include <filesystem>
 
 class Game
 {

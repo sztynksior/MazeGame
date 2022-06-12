@@ -15,8 +15,17 @@ Game& Game::getInstance(int pWidth, int pLength)
 void Game::runGame()
 {
     sf::RenderWindow window(sf::VideoMode(this->windowWidth, this->windowLength), "MazeGame");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    
+    std::filesystem::path pathFileTextureFlor = std::filesystem::current_path().append("MazeGameSprites\\florTexture.jpg");
+
+    sf::Texture textureFlor;
+    if (!textureFlor.loadFromFile(pathFileTextureFlor.string()))
+    {
+        return;
+    }
+
+    sf::Sprite spriteFlor;
+    spriteFlor.setTexture(textureFlor);
 
     while (window.isOpen())
     {
@@ -28,7 +37,7 @@ void Game::runGame()
         }
 
         window.clear();
-        window.draw(shape);
+        window.draw(spriteFlor);
         window.display();
     }
 }
