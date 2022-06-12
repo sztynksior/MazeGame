@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MazeCell.cpp" />
     <ClCompile Include="MazeGenerator.cpp" />
@@ -146,6 +147,7 @@
     <ClCompile Include="SquareMazeGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Game.h" />
     <ClInclude Include="MazeCell.h" />
     <ClInclude Include="MazeGenerator.h" />
     <ClInclude Include="SquareMazeCell.h" />

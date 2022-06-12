@@ -26,6 +26,9 @@
     <Filter Include="ProgramFiles\maze\MazeGenerator\MazeGeneratorClass">
       <UniqueIdentifier>{5701694d-d516-4f2f-95c3-217b8b1ecf7c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ProgramFiles\game">
+      <UniqueIdentifier>{6a5114f5-fbae-4ac0-8790-19b984c5ff44}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SquareMazeCell.cpp">
@@ -43,6 +46,9 @@
     <ClCompile Include="MazeGenerator.cpp">
       <Filter>ProgramFiles\maze\MazeGenerator\MazeGeneratorClass</Filter>
     </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>ProgramFiles\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SquareMazeCell.h">
@@ -56,6 +62,9 @@
     </ClInclude>
     <ClInclude Include="MazeGenerator.h">
       <Filter>ProgramFiles\maze\MazeGenerator\MazeGeneratorClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>ProgramFiles\game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
