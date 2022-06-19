@@ -2,16 +2,16 @@
 
 MazeElement::MazeElement(TextureMenager& pTextureMenager, const std::string& pTextureName, sf::Vector2f pPosition)
 {
-	this->position = pPosition;
 	this->sprite.setTexture(pTextureMenager.getTextureWithGivenName(pTextureName));
+	this->sprite.setPosition(pPosition);
 }
 
-void MazeElement::draw(sf::RenderTarget& pTarget)
+void MazeElement::draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const
 {
-	pTarget.draw(this->sprite);
+	pTarget.draw(this->sprite, pStates);
 }
 
 void MazeElement::setPosition(sf::Vector2f pPositon)
 {
-	this->position = pPositon;
+	this->sprite.setPosition(pPositon);
 }
