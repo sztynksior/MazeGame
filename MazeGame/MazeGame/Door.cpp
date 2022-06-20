@@ -9,9 +9,9 @@ Door::Door(sf::Texture& pTexture) : MazeElement(pTexture)
 {
 }
 
-void Door::onCollision()
+std::string Door::onCollision()
 {
-	//TO DO: napisæ funkcje
+	return "door";
 }
 
 MazeElement* Door::copy()

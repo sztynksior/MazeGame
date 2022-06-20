@@ -9,9 +9,9 @@ Wall::Wall(sf::Texture& pTexture) : MazeElement(pTexture)
 {
 }
 
-void Wall::onCollision()
+std::string Wall::onCollision()
 {
-	//TO DO: napisæ funkcje
+	return "wall";
 }
 
 MazeElement* Wall::copy()

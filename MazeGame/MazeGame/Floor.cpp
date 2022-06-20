@@ -9,9 +9,9 @@ Floor::Floor(sf::Texture& pTexture) : MazeElement(pTexture)
 {
 }
 
-void Floor::onCollision()
+std::string Floor::onCollision()
 {
-	//TO DO: napisæ funkcje
+	return "floor";
 }
 
 MazeElement* Floor::copy()

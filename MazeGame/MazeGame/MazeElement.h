@@ -1,6 +1,8 @@
 #ifndef MAZEELEMENT_H
 #define MAZEELEMENT_H
 
+
+#include "Player.h"
 #include <SFML/Graphics.hpp>
 
 class MazeElement : sf::Drawable
@@ -18,7 +20,7 @@ public:
 	void setPosition(sf::Vector2f pPositon);
 	sf::Vector2u getSpriteSize();
 	virtual MazeElement* copy() = 0;
-	virtual void onCollision() = 0;
+	virtual std::string onCollision() = 0; // TO DO: ZMIENIÆ!!!!
 
 };
 

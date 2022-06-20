@@ -12,7 +12,7 @@ private:
 public:
 
 	Door(sf::Texture& pTexture);
-	void onCollision();
+	std::string onCollision();
 	MazeElement* copy() override;
 };
 
