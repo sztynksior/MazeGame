@@ -10,6 +10,7 @@ Player::Player(sf::Texture& pTexture, sf::Vector2f pStartingPosition)
     this->sprite.setPosition(pStartingPosition);
     this->walking = false;
     this->movespeed = 1.0;
+    this->nextPosition = this->sprite.getPosition();
 
     for (bool direction : this->isMovingInDirection)
     {
@@ -26,7 +27,7 @@ void Player::setingMoveDirectionOnKeyPressed()
     {
         if (walking == false)
         {
-            nextPosition.y = position.y - spriteSize;
+            this->nextPosition.y = position.y - spriteSize;
 
             this->isMovingInDirection[UP] = true;
             walking = true;
@@ -37,7 +38,7 @@ void Player::setingMoveDirectionOnKeyPressed()
     {
         if (walking == false)
         {
-            nextPosition.y = position.y + spriteSize;
+            this->nextPosition.y = position.y + spriteSize;
             this->isMovingInDirection[DOWN] = true;
             walking = true;
         }
@@ -47,7 +48,7 @@ void Player::setingMoveDirectionOnKeyPressed()
     {
         if (walking == false)
         {
-            nextPosition.x = position.x - spriteSize;
+            this->nextPosition.x = position.x - spriteSize;
             this->isMovingInDirection[LEFT] = true;
             walking = true;
         }
@@ -57,7 +58,7 @@ void Player::setingMoveDirectionOnKeyPressed()
     {
         if (walking == false)
         {
-            nextPosition.x = position.x + spriteSize;
+            this->nextPosition.x = position.x + spriteSize;
             this->isMovingInDirection[RIGHT] = true;
             walking = true;
         }
@@ -76,9 +77,9 @@ void Player::movement()
             position.y -= movespeed;
             this->sprite.setPosition(position);
 
-            if (position.y <= nextPosition.y)
+            if (position.y <= this->nextPosition.y)
             {
-                this->sprite.setPosition(nextPosition);
+                this->sprite.setPosition(this->nextPosition);
                 walking = false;
                 this->isMovingInDirection[UP] = false;
             }
@@ -89,9 +90,9 @@ void Player::movement()
             position.y += movespeed;
             this->sprite.setPosition(position);
 
-            if (position.y >= nextPosition.y)
+            if (position.y >= this->nextPosition.y)
             {
-                this->sprite.setPosition(nextPosition);
+                this->sprite.setPosition(this->nextPosition);
                 walking = false;
                 this->isMovingInDirection[DOWN] = false;
             }
@@ -101,9 +102,9 @@ void Player::movement()
             position.x -= movespeed;
             this->sprite.setPosition(position);
 
-            if (position.x <= nextPosition.x)
+            if (position.x <= this->nextPosition.x)
             {
-                this->sprite.setPosition(nextPosition);
+                this->sprite.setPosition(this->nextPosition);
                 walking = false;
                 this->isMovingInDirection[LEFT] = false;
             }
@@ -113,9 +114,9 @@ void Player::movement()
             position.x += movespeed;
             this->sprite.setPosition(position);
 
-            if (position.x >= nextPosition.x)
+            if (position.x >= this->nextPosition.x)
             {
-                this->sprite.setPosition(nextPosition);
+                this->sprite.setPosition(this->nextPosition);
                 walking = false;
                 this->isMovingInDirection[RIGHT] = false;
             }
