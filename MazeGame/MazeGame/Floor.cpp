@@ -2,7 +2,6 @@
 
 Floor::Floor(const Floor& pFloor)
 {
-	this->position = pFloor.position;
 	this->sprite = pFloor.sprite;
 }
 

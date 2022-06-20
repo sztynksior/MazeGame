@@ -7,9 +7,12 @@
 
 class SquareMaze : public Maze
 {
-protected:
+private:
 
 	void createMaze();
+	void defaultMazeInicialization();
+	void makingPaths();
+	void setingPositionsOfSprites();
 
 public:
 

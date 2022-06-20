@@ -2,7 +2,6 @@
 
 Door::Door(const Door& pDoor)
 {
-	this->position = pDoor.position;
 	this->sprite = pDoor.sprite;
 }
 
@@ -13,7 +12,7 @@ Door::Door(TextureMenager& pTextureMenager, const std::string& pTextureName, sf:
 
 void Door::onCollision()
 {
-	return new Door(*this);
+	//TO DO: napisæ funkcje
 }
 
 MazeElement* Door::copy()

@@ -2,7 +2,6 @@
 
 Wall::Wall(const Wall& pWall)
 {
-	this->position = pWall.position;
 	this->sprite = pWall.sprite;
 }
 

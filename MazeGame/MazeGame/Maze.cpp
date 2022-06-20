@@ -8,6 +8,11 @@ Maze::Maze(MazeElement* pFloor, MazeElement* pWall, MazeElement* pDoor, sf::Vect
 	this->initialPosition = pInitialPosition;
 	this->maxMazeX = pMaxMazeX;
 	this->maxMazeY = pMaxMazeY;
+	
+	if (this->door->getSpriteSize() == this->floor->getSpriteSize() and this->floor->getSpriteSize() == this->wall->getSpriteSize())
+	{
+		this->spritesSize = this->door->getSpriteSize();
+	}
 }
 
 Maze::~Maze()

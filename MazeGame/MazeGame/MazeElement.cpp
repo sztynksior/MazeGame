@@ -15,3 +15,8 @@ void MazeElement::setPosition(sf::Vector2f pPositon)
 {
 	this->sprite.setPosition(pPositon);
 }
+
+sf::Vector2u MazeElement::getSpriteSize()
+{
+	return this->sprite.getTexture()->getSize();
+}

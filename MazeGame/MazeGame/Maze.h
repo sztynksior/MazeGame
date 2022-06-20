@@ -20,6 +20,7 @@ protected:
 	MazeElement* door;
 	std::vector<std::vector<MazeElement*>> mazeLayout;
 	SquareMazeGenerator* mazePlan;
+	sf::Vector2u spritesSize;
 
 	virtual void createMaze() = 0;
 
