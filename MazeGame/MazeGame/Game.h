@@ -1,6 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include "TextureMenager.h"
 #include <SFML/Graphics.hpp>
 #include <filesystem>
 

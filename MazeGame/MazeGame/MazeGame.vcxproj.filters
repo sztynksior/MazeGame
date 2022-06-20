@@ -8,63 +8,123 @@
     <Filter Include="ProgramFiles\maze">
       <UniqueIdentifier>{de85a8db-604d-4886-ad8c-1c98c41b7893}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ProgramFiles\maze\MazeCell">
-      <UniqueIdentifier>{48255ca7-f3c3-4bf2-b5de-1ef48b5069f4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ProgramFiles\maze\MazeGenerator">
-      <UniqueIdentifier>{c52f8967-603c-4db9-bccf-82f82b8f4b4e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ProgramFiles\maze\MazeGenerator\SquareMazeGeneratorClass">
-      <UniqueIdentifier>{500c27f3-f5e8-45a7-847f-55adc9f0e410}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ProgramFiles\maze\MazeCell\SquareMazeCellClass">
-      <UniqueIdentifier>{cb81cfbc-88a1-465c-831c-9656675ceebc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ProgramFiles\maze\MazeCell\MazeCellClass">
-      <UniqueIdentifier>{06de9f72-2d87-4a57-a145-10aa55235afb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ProgramFiles\maze\MazeGenerator\MazeGeneratorClass">
-      <UniqueIdentifier>{5701694d-d516-4f2f-95c3-217b8b1ecf7c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ProgramFiles\game">
       <UniqueIdentifier>{6a5114f5-fbae-4ac0-8790-19b984c5ff44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProgramFiles\maze\MazeAlgotitm">
+      <UniqueIdentifier>{08414df3-592a-4942-baac-be15462ebad5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProgramFiles\maze\MazeAlgotitm\MazeGenerator">
+      <UniqueIdentifier>{c52f8967-603c-4db9-bccf-82f82b8f4b4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProgramFiles\maze\MazeAlgotitm\MazeGenerator\SquareMazeGeneratorClass">
+      <UniqueIdentifier>{500c27f3-f5e8-45a7-847f-55adc9f0e410}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProgramFiles\maze\MazeAlgotitm\MazeGenerator\MazeGeneratorClass">
+      <UniqueIdentifier>{5701694d-d516-4f2f-95c3-217b8b1ecf7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProgramFiles\maze\MazeAlgotitm\MazeCell">
+      <UniqueIdentifier>{48255ca7-f3c3-4bf2-b5de-1ef48b5069f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProgramFiles\maze\MazeAlgotitm\MazeCell\SquareMazeCellClass">
+      <UniqueIdentifier>{cb81cfbc-88a1-465c-831c-9656675ceebc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProgramFiles\maze\MazeAlgotitm\MazeCell\MazeCellClass">
+      <UniqueIdentifier>{06de9f72-2d87-4a57-a145-10aa55235afb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProgramFiles\maze\SquareMaze">
+      <UniqueIdentifier>{1369ddc7-8bdf-4ae3-8f4d-b89e5807617e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProgramFiles\maze\MazeElement">
+      <UniqueIdentifier>{7a54a105-1c9b-4499-b3b5-34c8fd2460c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProgramFiles\maze\MazeElement\Door">
+      <UniqueIdentifier>{b65863f0-3ee1-472b-bd53-8b9b31ea1e88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProgramFiles\maze\MazeElement\Floor">
+      <UniqueIdentifier>{8f05ace9-fce2-468d-bf8a-2bfc26a94caf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProgramFiles\maze\MazeElement\Wall">
+      <UniqueIdentifier>{7deca3b1-e6c2-4e06-812a-f99f220b5d59}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SquareMazeCell.cpp">
-      <Filter>ProgramFiles\maze\MazeCell\SquareMazeCellClass</Filter>
+      <Filter>ProgramFiles\maze\MazeAlgotitm\MazeCell\SquareMazeCellClass</Filter>
     </ClCompile>
     <ClCompile Include="SquareMazeGenerator.cpp">
-      <Filter>ProgramFiles\maze\MazeGenerator\SquareMazeGeneratorClass</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>ProgramFiles</Filter>
+      <Filter>ProgramFiles\maze\MazeAlgotitm\MazeGenerator\SquareMazeGeneratorClass</Filter>
     </ClCompile>
     <ClCompile Include="MazeCell.cpp">
-      <Filter>ProgramFiles\maze\MazeCell\MazeCellClass</Filter>
+      <Filter>ProgramFiles\maze\MazeAlgotitm\MazeCell\MazeCellClass</Filter>
     </ClCompile>
     <ClCompile Include="MazeGenerator.cpp">
-      <Filter>ProgramFiles\maze\MazeGenerator\MazeGeneratorClass</Filter>
+      <Filter>ProgramFiles\maze\MazeAlgotitm\MazeGenerator\MazeGeneratorClass</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>ProgramFiles\game</Filter>
     </ClCompile>
+    <ClCompile Include="TextureMenager.cpp">
+      <Filter>ProgramFiles\game</Filter>
+    </ClCompile>
+    <ClCompile Include="Maze.cpp">
+      <Filter>ProgramFiles\maze</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>ProgramFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="SquareMaze.cpp">
+      <Filter>ProgramFiles\maze\SquareMaze</Filter>
+    </ClCompile>
+    <ClCompile Include="MazeElement.cpp">
+      <Filter>ProgramFiles\maze\MazeElement</Filter>
+    </ClCompile>
+    <ClCompile Include="Door.cpp">
+      <Filter>ProgramFiles\maze\MazeElement\Door</Filter>
+    </ClCompile>
+    <ClCompile Include="Floor.cpp">
+      <Filter>ProgramFiles\maze\MazeElement\Floor</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall.cpp">
+      <Filter>ProgramFiles\maze\MazeElement\Wall</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SquareMazeCell.h">
-      <Filter>ProgramFiles\maze\MazeCell\SquareMazeCellClass</Filter>
+      <Filter>ProgramFiles\maze\MazeAlgotitm\MazeCell\SquareMazeCellClass</Filter>
     </ClInclude>
     <ClInclude Include="SquareMazeGenerator.h">
-      <Filter>ProgramFiles\maze\MazeGenerator\SquareMazeGeneratorClass</Filter>
+      <Filter>ProgramFiles\maze\MazeAlgotitm\MazeGenerator\SquareMazeGeneratorClass</Filter>
     </ClInclude>
     <ClInclude Include="MazeCell.h">
-      <Filter>ProgramFiles\maze\MazeCell\MazeCellClass</Filter>
+      <Filter>ProgramFiles\maze\MazeAlgotitm\MazeCell\MazeCellClass</Filter>
     </ClInclude>
     <ClInclude Include="MazeGenerator.h">
-      <Filter>ProgramFiles\maze\MazeGenerator\MazeGeneratorClass</Filter>
+      <Filter>ProgramFiles\maze\MazeAlgotitm\MazeGenerator\MazeGeneratorClass</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>ProgramFiles\game</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureMenager.h">
+      <Filter>ProgramFiles\game</Filter>
+    </ClInclude>
+    <ClInclude Include="Maze.h">
+      <Filter>ProgramFiles\maze</Filter>
+    </ClInclude>
+    <ClInclude Include="SquareMaze.h">
+      <Filter>ProgramFiles\maze\SquareMaze</Filter>
+    </ClInclude>
+    <ClInclude Include="MazeElement.h">
+      <Filter>ProgramFiles\maze\MazeElement</Filter>
+    </ClInclude>
+    <ClInclude Include="Door.h">
+      <Filter>ProgramFiles\maze\MazeElement\Door</Filter>
+    </ClInclude>
+    <ClInclude Include="Floor.h">
+      <Filter>ProgramFiles\maze\MazeElement\Floor</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>ProgramFiles\maze\MazeElement\Wall</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

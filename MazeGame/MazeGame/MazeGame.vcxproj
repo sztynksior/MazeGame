@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -141,19 +141,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Door.cpp" />
+    <ClCompile Include="Floor.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Maze.cpp" />
     <ClCompile Include="MazeCell.cpp" />
+    <ClCompile Include="MazeElement.cpp" />
     <ClCompile Include="MazeGenerator.cpp" />
+    <ClCompile Include="SquareMaze.cpp" />
     <ClCompile Include="SquareMazeCell.cpp" />
     <ClCompile Include="SquareMazeGenerator.cpp" />
+    <ClCompile Include="TextureMenager.cpp" />
+    <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Door.h" />
+    <ClInclude Include="Floor.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Maze.h" />
     <ClInclude Include="MazeCell.h" />
+    <ClInclude Include="MazeElement.h" />
     <ClInclude Include="MazeGenerator.h" />
+    <ClInclude Include="SquareMaze.h" />
     <ClInclude Include="SquareMazeCell.h" />
     <ClInclude Include="SquareMazeGenerator.h" />
+    <ClInclude Include="TextureMenager.h" />
+    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

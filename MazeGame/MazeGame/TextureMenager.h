@@ -16,7 +16,7 @@ public:
 
 	TextureMenager(std::string pFileWithTexturesPath);
 	void SetTextureMap();
-
+	sf::Texture getTextureWithGivenName(const std::string& pTextureName);
 };
 
 #endif // !TEXTUREMENAGER_H

@@ -20,3 +20,8 @@ void TextureMenager::SetTextureMap()
 		this->TextureMap.insert({ entry.path().filename().string(), texture });
 	}
 }
+
+sf::Texture TextureMenager::getTextureWithGivenName(const std::string& pTextureName)
+{
+	return this->TextureMap[pTextureName];
+}

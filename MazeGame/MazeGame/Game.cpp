@@ -18,6 +18,8 @@ void Game::runGame()
     
     std::filesystem::path pathFileTextureFlor = std::filesystem::current_path().append("MazeGameSprites\\florTexture.jpg");
 
+    TextureMenager T1("Textures");
+    T1.SetTextureMap();
     sf::Texture textureFlor;
     if (!textureFlor.loadFromFile(pathFileTextureFlor.string()))
     {
