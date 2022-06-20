@@ -11,7 +11,7 @@ private:
 
 public:
 
-	Door(TextureMenager& pTextureMenager, const std::string& pTextureName, sf::Vector2f pPosition);
+	Door(sf::Texture& pTexture);
 	void onCollision();
 	MazeElement* copy() override;
 };

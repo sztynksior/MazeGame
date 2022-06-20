@@ -5,8 +5,7 @@ Wall::Wall(const Wall& pWall)
 	this->sprite = pWall.sprite;
 }
 
-Wall::Wall(TextureMenager& pTextureMenager, const std::string& pTextureName, sf::Vector2f pPosition)
-	: MazeElement(pTextureMenager, pTextureName, pPosition)
+Wall::Wall(sf::Texture& pTexture) : MazeElement(pTexture)
 {
 }
 

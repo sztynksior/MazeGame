@@ -5,8 +5,8 @@ Floor::Floor(const Floor& pFloor)
 	this->sprite = pFloor.sprite;
 }
 
-Floor::Floor(TextureMenager& pTextureMenager, const std::string& pTextureName, sf::Vector2f pPosition)
-	: MazeElement(pTextureMenager, pTextureName, pPosition)
+Floor::Floor(sf::Texture& pTexture)
+	: MazeElement(pTexture)
 {
 }
 

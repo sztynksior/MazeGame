@@ -10,7 +10,7 @@ private:
 
 public:
 
-	Wall(TextureMenager& pTextureMenager, const std::string& pTextureName, sf::Vector2f pPosition);
+	Wall(sf::Texture& pTexture);
 	void onCollision();
 	MazeElement* copy() override;
 };

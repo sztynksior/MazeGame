@@ -11,7 +11,7 @@ private:
 
 public:
 
-	Floor(TextureMenager& pTextureMenager, const std::string& pTextureName, sf::Vector2f pPosition);
+	Floor(sf::Texture& pTexture);
 	void onCollision();
 	MazeElement* copy() override;
 };
