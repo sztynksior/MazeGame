@@ -30,6 +30,7 @@ public:
 	~Maze();
 
 	virtual void draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const = 0;
+	std::vector<std::vector<MazeElement*>>& getMazeLayout();
 };
 
 #endif // !MAZE_H

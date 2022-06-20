@@ -29,3 +29,8 @@ Maze::~Maze()
 		}
 	}
 }
+
+std::vector<std::vector<MazeElement*>>& Maze::getMazeLayout()
+{
+	return this->mazeLayout;
+}
