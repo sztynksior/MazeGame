@@ -1,7 +1,6 @@
 #ifndef MAZEELEMENT_H
 #define MAZEELEMENT_H
 
-#include "TextureMenager.h"
 #include <SFML/Graphics.hpp>
 
 class MazeElement : sf::Drawable
@@ -13,7 +12,7 @@ protected:
 public:
 
 	MazeElement();
-	MazeElement(TextureMenager& pTextureMenager, const std::string& pTextureName, sf::Vector2f pPosition);
+	MazeElement(sf::Texture& pTexture);
 
 	void draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const override;
 	void setPosition(sf::Vector2f pPositon);

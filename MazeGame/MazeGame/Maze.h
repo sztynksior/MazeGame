@@ -26,7 +26,7 @@ protected:
 
 public:
 
-	Maze(MazeElement* pFloor, MazeElement* pWall, MazeElement* pDoor, sf::Vector2f pInitialPosition, int pMaxMazeX, int pMaxMazeY);
+	Maze(sf::Texture& pFloorTexture, sf::Texture& pWallTexture, sf::Texture& pDoorTexture, sf::Vector2f pInitialPosition, int pMaxMazeX, int pMaxMazeY);
 	~Maze();
 
 	virtual void draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const = 0;

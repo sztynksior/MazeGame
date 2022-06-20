@@ -1,9 +1,9 @@
 #include "MazeElement.h"
 
-MazeElement::MazeElement(TextureMenager& pTextureMenager, const std::string& pTextureName, sf::Vector2f pPosition)
+MazeElement::MazeElement(sf::Texture& pTexture)
 {
-	this->sprite.setTexture(pTextureMenager.getTextureWithGivenName(pTextureName));
-	this->sprite.setPosition(pPosition);
+	this->sprite.setTexture(pTexture);
+	this->sprite.setPosition({ 0, 0 });
 }
 
 void MazeElement::draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const

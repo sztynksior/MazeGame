@@ -1,14 +1,15 @@
 #include "Maze.h"
 
-Maze::Maze(MazeElement* pFloor, MazeElement* pWall, MazeElement* pDoor, sf::Vector2f pInitialPosition, int pMaxMazeX, int pMaxMazeY)
+Maze::Maze(sf::Texture& pFloorTexture, sf::Texture& pWallTexture, sf::Texture& pDoorTexture, sf::Vector2f pInitialPosition, int pMaxMazeX, int pMaxMazeY)
 {
-	this->floor = pFloor->copy();
-	this->wall = pWall->copy();
-	this->door = pDoor->copy();
+	this->floor = new Floor(pFloorTexture);
+	this->wall = new Wall(pWallTexture);
+	this->door = new Door(pDoorTexture);
 	this->initialPosition = pInitialPosition;
 	this->maxMazeX = pMaxMazeX;
 	this->maxMazeY = pMaxMazeY;
-	
+	this->mazePlan = new SquareMazeGenerator(pMaxMazeX, pMaxMazeY, { pMaxMazeX / 2,  pMaxMazeY });
+
 	if (this->door->getSpriteSize() == this->floor->getSpriteSize() and this->floor->getSpriteSize() == this->wall->getSpriteSize())
 	{
 		this->spritesSize = this->door->getSpriteSize();
