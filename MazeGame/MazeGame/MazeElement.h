@@ -19,6 +19,7 @@ public:
 	void draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const override;
 	void setPosition(sf::Vector2f pPositon);
 	sf::Vector2u getSpriteSize();
+	sf::Vector2f getSpritePosition();
 	virtual MazeElement* copy() = 0;
 	virtual std::string onCollision() = 0; // TO DO: ZMIENIÆ!!!!
 

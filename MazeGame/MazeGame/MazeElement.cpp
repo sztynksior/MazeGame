@@ -24,3 +24,8 @@ sf::Vector2u MazeElement::getSpriteSize()
 {
 	return this->sprite.getTexture()->getSize();
 }
+
+sf::Vector2f MazeElement::getSpritePosition()
+{
+	return this->sprite.getPosition();
+}
