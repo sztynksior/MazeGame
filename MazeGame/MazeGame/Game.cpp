@@ -21,14 +21,6 @@ void Game::runGame()
 {
     sf::RenderWindow window(sf::VideoMode(this->windowWidth, this->windowLength), "MazeGame");
     window.setVerticalSyncEnabled(true);
-    
-    std::filesystem::path pathFileTextureFlor = std::filesystem::current_path().append("MazeGameSprites\\florTexture.jpg");
-
-    TextureMenager T1("Textures");
-    T1.SetTextureMap();
-    sf::Texture fg;
-
-    SquareMaze SM1(T1.getTextureWithGivenName("SquareFloor"), T1.getTextureWithGivenName("SquareWall"), T1.getTextureWithGivenName("SquareDoor"), {0, 0}, 20, 20);
 
     while (window.isOpen())
     {
@@ -42,7 +34,7 @@ void Game::runGame()
         this->player->movement();
 
         window.clear();
-        window.draw(SM1);
+        window.draw(*this->maze);
         window.draw(*this->player);
         window.display();
     }
