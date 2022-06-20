@@ -6,6 +6,11 @@ Game::Game(int pWidth, int pLength)
     this->windowLength = pLength;
 }
 
+void Game::collision(Player* pPlayer, Maze* pMaze)
+{
+
+}
+
 Game& Game::getInstance(int pWidth, int pLength)
 {
     static Game instance(pWidth, pLength);

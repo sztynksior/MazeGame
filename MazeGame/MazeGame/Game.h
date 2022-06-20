@@ -19,6 +19,8 @@ private:
 
 	Game(int pWidth, int pLength);
 
+	void collision(Player* pPlayer, Maze* pMaze);
+
 public:
 
 	static Game & getInstance(int pWidth, int pLength);
