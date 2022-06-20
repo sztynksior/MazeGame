@@ -15,6 +15,7 @@ private:
 	int windowWidth;
 	int windowLength;
 	Player* player;
+	Maze* maze;
 
 	Game(int pWidth, int pLength);
 
@@ -28,6 +29,7 @@ public:
 
 	void runGame();
 	void setPlayer(Player* pPlayer);
+	void setMaze(Maze* pMaze);
 };
 
 #endif // !GAME_H

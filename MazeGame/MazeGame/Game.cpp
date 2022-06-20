@@ -30,8 +30,6 @@ void Game::runGame()
 
     SquareMaze SM1(T1.getTextureWithGivenName("SquareFloor"), T1.getTextureWithGivenName("SquareWall"), T1.getTextureWithGivenName("SquareDoor"), {0, 0}, 20, 20);
 
-    //Player p1(T1.getTextureWithGivenName("Player"), { 1 * 16, 0 });
-
     while (window.isOpen())
     {
         sf::Event event;
@@ -54,4 +52,10 @@ void Game::setPlayer(Player* pPlayer)
 {
     this->player = pPlayer;
     pPlayer = NULL;
+}
+
+void Game::setMaze(Maze* pMaze)
+{
+    this->maze = pMaze;
+    pMaze = NULL;
 }
