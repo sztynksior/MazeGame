@@ -47,6 +47,9 @@
     <Filter Include="ProgramFiles\maze\MazeElement\Wall">
       <UniqueIdentifier>{7deca3b1-e6c2-4e06-812a-f99f220b5d59}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ProgramFiles\Player">
+      <UniqueIdentifier>{6fb784a1-d522-40f8-af26-41ecd2f04517}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SquareMazeCell.cpp">
@@ -88,6 +91,9 @@
     <ClCompile Include="Wall.cpp">
       <Filter>ProgramFiles\maze\MazeElement\Wall</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>ProgramFiles\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SquareMazeCell.h">
@@ -125,6 +131,9 @@
     </ClInclude>
     <ClInclude Include="Wall.h">
       <Filter>ProgramFiles\maze\MazeElement\Wall</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>ProgramFiles\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

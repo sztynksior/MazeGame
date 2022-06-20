@@ -4,6 +4,7 @@
 #include "TextureMenager.h"
 #include "Maze.h"
 #include "SquareMaze.h"
+#include "Player.h"
 #include <SFML/Graphics.hpp>
 #include <filesystem>
 
