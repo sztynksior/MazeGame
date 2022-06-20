@@ -12,6 +12,11 @@ Game& Game::getInstance(int pWidth, int pLength)
     return instance;
 }
 
+Game::~Game()
+{
+    delete this->player;
+}
+
 void Game::runGame()
 {
     sf::RenderWindow window(sf::VideoMode(this->windowWidth, this->windowLength), "MazeGame");
@@ -43,4 +48,10 @@ void Game::runGame()
         window.draw(p1);
         window.display();
     }
+}
+
+void Game::setPlayer(Player* pPlayer)
+{
+    this->player = pPlayer;
+    pPlayer = NULL;
 }

@@ -14,17 +14,20 @@ private:
 
 	int windowWidth;
 	int windowLength;
+	Player* player;
 
 	Game(int pWidth, int pLength);
 
 public:
 
 	static Game & getInstance(int pWidth, int pLength);
+	~Game();
 
 	Game(const Game&) = delete;
 	Game& operator=(const Game&) = delete;
 
 	void runGame();
+	void setPlayer(Player* pPlayer);
 };
 
 #endif // !GAME_H
