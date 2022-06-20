@@ -4,6 +4,9 @@
 #include <SFML/Graphics.hpp>
 #include <filesystem>
 #include <unordered_map>
+#include <string>
+#include <regex>
+#include <iterator>
 
 class TextureMenager
 {
@@ -16,7 +19,7 @@ public:
 
 	TextureMenager(std::string pFileWithTexturesPath);
 	void SetTextureMap();
-	sf::Texture getTextureWithGivenName(const std::string& pTextureName);
+	sf::Texture& getTextureWithGivenName(const std::string& pTextureName);
 };
 
 #endif // !TEXTUREMENAGER_H

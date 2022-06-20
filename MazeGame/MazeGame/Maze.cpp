@@ -8,7 +8,6 @@ Maze::Maze(sf::Texture& pFloorTexture, sf::Texture& pWallTexture, sf::Texture& p
 	this->initialPosition = pInitialPosition;
 	this->maxMazeX = pMaxMazeX;
 	this->maxMazeY = pMaxMazeY;
-	this->mazePlan = new SquareMazeGenerator(pMaxMazeX, pMaxMazeY, { pMaxMazeX / 2,  pMaxMazeY });
 
 	if (this->door->getSpriteSize() == this->floor->getSpriteSize() and this->floor->getSpriteSize() == this->wall->getSpriteSize())
 	{

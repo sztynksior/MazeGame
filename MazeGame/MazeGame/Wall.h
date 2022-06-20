@@ -15,4 +15,4 @@ public:
 	MazeElement* copy() override;
 };
 
-#endif WALL_H
+#endif //!WALL_H

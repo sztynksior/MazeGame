@@ -2,6 +2,8 @@
 #define GAME_H
 
 #include "TextureMenager.h"
+#include "Maze.h"
+#include "SquareMaze.h"
 #include <SFML/Graphics.hpp>
 #include <filesystem>
 

@@ -49,17 +49,17 @@ void SquareMazeGenerator::mazeInicialization()
 
 	cellsOnStack.push(maze[this->startingCoordinates.first][this->startingCoordinates.second]->getCoordinates());
 
-	while (numberOFVisitedCells < numberOfCellsToVisit)
+	this->getAccessToCellWithGivenCoordinates({ this->startingCoordinates.first, this->startingCoordinates.second })->wasVisited();
+
+	while (numberOFVisitedCells < numberOfCellsToVisit - 1)
 	{
 		std::vector<std::pair<int, int>> notVisitedNeighbours;
 
 		this->lookingForNeighbours(notVisitedNeighbours, cellsOnStack.top());
 
-		//TO DO: przenieœ tego ifa do osobnej funkcji
-
 		if (!notVisitedNeighbours.empty())
 		{
-			std::pair<int, int> nextNeighbour = notVisitedNeighbours[rand() % notVisitedNeighbours.size()]; //TO DO: zmieñ nazwe i sprawdŸ czy rand zwraca za ka¿dym razem inn¹ wartoœæ
+			std::pair<int, int> nextNeighbour = notVisitedNeighbours[rand() % notVisitedNeighbours.size()]; //TO DO: zmieñ nazwe
 
 			this->getAccessToCellIndicatedByVector(cellsOnStack.top(), nextNeighbour)->wasVisited();
 			this->getAccessToCellIndicatedByVector(cellsOnStack.top(), nextNeighbour)->addNeighbour({ nextNeighbour.first * -1, nextNeighbour.second * -1 });

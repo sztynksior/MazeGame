@@ -5,8 +5,7 @@ Door::Door(const Door& pDoor)
 	this->sprite = pDoor.sprite;
 }
 
-Door::Door(sf::Texture& pTexture)
-	: MazeElement(pTexture)
+Door::Door(sf::Texture& pTexture) : MazeElement(pTexture)
 {
 }
 

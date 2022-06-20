@@ -16,4 +16,4 @@ public:
 	MazeElement* copy() override;
 };
 
-#endif FLOOR_H
+#endif //!FLOOR_H

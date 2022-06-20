@@ -20,14 +20,11 @@ void Game::runGame()
 
     TextureMenager T1("Textures");
     T1.SetTextureMap();
-    sf::Texture textureFlor;
-    if (!textureFlor.loadFromFile(pathFileTextureFlor.string()))
-    {
-        return;
-    }
+    sf::Texture fg;
 
-    sf::Sprite spriteFlor;
-    spriteFlor.setTexture(textureFlor);
+    SquareMaze SM1(T1.getTextureWithGivenName("SquareFloor"), T1.getTextureWithGivenName("SquareWall"), T1.getTextureWithGivenName("SquareDoor"), {0, 0}, 20, 20);
+
+
 
     while (window.isOpen())
     {
@@ -39,7 +36,7 @@ void Game::runGame()
         }
 
         window.clear();
-        window.draw(spriteFlor);
+        window.draw(SM1);
         window.display();
     }
 }

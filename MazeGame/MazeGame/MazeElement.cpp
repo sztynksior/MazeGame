@@ -1,5 +1,9 @@
 #include "MazeElement.h"
 
+MazeElement::MazeElement()
+{
+}
+
 MazeElement::MazeElement(sf::Texture& pTexture)
 {
 	this->sprite.setTexture(pTexture);
