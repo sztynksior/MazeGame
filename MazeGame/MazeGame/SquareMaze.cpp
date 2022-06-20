@@ -98,3 +98,14 @@ SquareMaze::SquareMaze(MazeElement* pFloor, MazeElement* pWall, MazeElement* pDo
 
 	this->createMaze();
 }
+
+void SquareMaze::draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const
+{
+	for (int i = 0; i < this->maxMazeX * 2 + 1; i++)
+	{
+		for (int j = 0; j < this->maxMazeY * 2 + 1; j++)
+		{
+			this->mazeLayout[i][j]->draw(pTarget, pStates);
+		}
+	}
+}
