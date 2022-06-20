@@ -1,13 +1,12 @@
 ﻿#include "MazeGenerator.h"
 
-MazeGenerator::MazeGenerator(const int pMaxMazeX, const int pMaxMazeY, const std::pair<int, int>& pStartingCoordinates, const std::pair<int, int>& pFinishCoordinateS)
+MazeGenerator::MazeGenerator(const int pMaxMazeX, const int pMaxMazeY, const std::pair<int, int>& pStartingCoordinates)
 {
 
 	this->maxMazeX = pMaxMazeX;
 	this->maxMazeY = pMaxMazeY;
 
 	this->startingCoordinates = pStartingCoordinates;
-	this->finishCoordinates = pFinishCoordinateS;
 }
 
 MazeGenerator::~MazeGenerator()

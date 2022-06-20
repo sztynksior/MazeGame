@@ -12,7 +12,6 @@ protected:
 
 	int maxMazeX, maxMazeY;
 	std::pair<int, int> startingCoordinates;
-	std::pair<int, int> finishCoordinates;
 	std::vector<std::vector<MazeCell*>> maze;
 
 private:
@@ -22,7 +21,7 @@ private:
 public:
 
 
-	MazeGenerator(const int pMaxMazeX, const int pMaxMazeY, const std::pair<int, int>& pStartingCoordinates, const std::pair<int, int>& pFinishCoordinateS);
+	MazeGenerator(const int pMaxMazeX, const int pMaxMazeY, const std::pair<int, int>& pStartingCoordinates);
 	~MazeGenerator();
 
 	virtual int getMaxMazeX() = 0;

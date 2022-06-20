@@ -5,8 +5,8 @@ MazeCell* SquareMazeGenerator::getAccessToCellIndicatedByVector(const std::pair<
 	return maze[pCellCoordinates.first + pIndicativeVector.first][pCellCoordinates.second + pIndicativeVector.second];
 }
 
-SquareMazeGenerator::SquareMazeGenerator(const int pMaxMazeX, const int pMaxMazeY, const std::pair<int, int>& pStartingCoordinates, const std::pair<int, int>& pFinishCoordinateS)
-	: MazeGenerator(pMaxMazeX, pMaxMazeY, pStartingCoordinates, pFinishCoordinateS)
+SquareMazeGenerator::SquareMazeGenerator(const int pMaxMazeX, const int pMaxMazeY, const std::pair<int, int>& pStartingCoordinates)
+	: MazeGenerator(pMaxMazeX, pMaxMazeY, pStartingCoordinates)
 {
 	for (int i = 0; i < this->maxMazeX; i++)
 	{

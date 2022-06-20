@@ -15,7 +15,7 @@ private:
 
 public:
 
-	SquareMazeGenerator(const int pMaxMazeX, const int pMaxMazeY, const std::pair<int, int>& pStartingCoordinates, const std::pair<int, int>& pFinishCoordinateS);
+	SquareMazeGenerator(const int pMaxMazeX, const int pMaxMazeY, const std::pair<int, int>& pStartingCoordinates);
 	~SquareMazeGenerator();
 
 	int getMaxMazeX();
