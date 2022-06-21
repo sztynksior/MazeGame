@@ -5,14 +5,22 @@ void Menu::setSprites()
 	sf::Vector2f textureSize(this->menuButtonsTextures[EASY].first.getSize().x, this->menuButtonsTextures[EASY].first.getSize().y);
 
 	this->menuButtons.push_back(sf::Sprite(this->menuButtonsTextures[EASY].second));
-	this->menuButtons.push_back(sf::Sprite(this->menuButtonsTextures[MEDIUM].second));
-	this->menuButtons.push_back(sf::Sprite(this->menuButtonsTextures[HARD].second));
-	this->menuButtons.push_back(sf::Sprite(this->menuButtonsTextures[EXIT].second));
+	this->menuButtons.push_back(sf::Sprite(this->menuButtonsTextures[MEDIUM].first));
+	this->menuButtons.push_back(sf::Sprite(this->menuButtonsTextures[HARD].first));
+	this->menuButtons.push_back(sf::Sprite(this->menuButtonsTextures[EXIT].first));
 
-	this->menuButtons[EASY].setPosition(sf::Vector2f((this->windowWidth / 2) - (textureSize.x / 2), this->windowLenght / MENU_BUTTONS * 1));
-	this->menuButtons[MEDIUM].setPosition(sf::Vector2f((this->windowWidth / 2) - (textureSize.x / 2), this->windowLenght / MENU_BUTTONS * 1));
-	this->menuButtons[HARD].setPosition(sf::Vector2f((this->windowWidth / 2) - (textureSize.x / 2), this->windowLenght / MENU_BUTTONS * 1));
-	this->menuButtons[EXIT].setPosition(sf::Vector2f((this->windowWidth / 2) - (textureSize.x / 2), this->windowLenght / MENU_BUTTONS * 1));
+	this->menuButtons[EASY].setPosition(sf::Vector2f((this->windowWidth / 2) - (textureSize.x / 2), this->windowLenght / MENU_BUTTONS * 2/3));
+	this->menuButtons[MEDIUM].setPosition(sf::Vector2f((this->windowWidth / 2) - (textureSize.x / 2), this->windowLenght / MENU_BUTTONS * 5/3));
+	this->menuButtons[HARD].setPosition(sf::Vector2f((this->windowWidth / 2) - (textureSize.x / 2), this->windowLenght / MENU_BUTTONS * 8/3));
+	this->menuButtons[EXIT].setPosition(sf::Vector2f((this->windowWidth / 2) - (textureSize.x / 2), this->windowLenght / MENU_BUTTONS * 11/3));
+}
+
+void Menu::moveUp()
+{
+}
+
+void Menu::moveDown()
+{
 }
 
 void Menu::draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const
@@ -21,6 +29,18 @@ void Menu::draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const
 	{
 		pTarget.draw(i, pStates);
 	}
+}
+
+void Menu::setPositions()
+{
+}
+
+void Menu::select(whichButton pWitchButton)
+{
+}
+
+void Menu::unselect(whichButton pWitchButton)
+{
 }
 
 Menu::Menu(int pWindowWidth, int pWindowLenght)

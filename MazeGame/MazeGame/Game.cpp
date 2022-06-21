@@ -50,6 +50,8 @@ void Game::runGame()
     sf::RenderWindow window(sf::VideoMode(this->windowWidth, this->windowLength), "MazeGame");
     window.setVerticalSyncEnabled(true);
 
+
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -61,8 +63,9 @@ void Game::runGame()
         this->player->setingMoveDirectionOnKeyPressed();
         this->collision();
         this->player->movement();
-
+ 
         window.clear();
+        //window.draw(*this->menu);
         window.draw(*this->maze);
         window.draw(*this->player);
         window.display();
@@ -72,13 +75,22 @@ void Game::runGame()
 void Game::setPlayer(Player* pPlayer)
 {
     this->player = pPlayer;
-
+    pPlayer = NULL;
 }
 
 void Game::setMaze(Maze* pMaze)
 {
     this->maze = pMaze;
     pMaze = NULL;
+}
+
+void Game::setMenu(Menu* pMenu, TextureMenager& pTextureMenager)
+{
+    this->menu = pMenu;
+    pMenu = NULL;
+
+    this->menu->setTextures(pTextureMenager);
+    this->menu->setSprites();
 }
 
 void Game::nextLevel(int pDeltaMazeSize)

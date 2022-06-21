@@ -5,6 +5,7 @@
 #include "Maze.h"
 #include "SquareMaze.h"
 #include "Player.h"
+#include "Menu.h"
 #include <SFML/Graphics.hpp>
 #include <filesystem>
 
@@ -16,6 +17,7 @@ private:
 	int windowLength;
 	Player* player;
 	Maze* maze;
+	Menu* menu;
 
 	Game(int pWidth, int pLength);
 
@@ -32,6 +34,7 @@ public:
 	void runGame();
 	void setPlayer(Player* pPlayer);
 	void setMaze(Maze* pMaze);
+	void setMenu(Menu* pMenu, TextureMenager& pTextureMenager);
 	void nextLevel(int pDeltaMazeSize);
 };
 

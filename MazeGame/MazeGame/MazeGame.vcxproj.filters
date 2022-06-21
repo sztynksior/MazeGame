@@ -94,9 +94,11 @@
     <ClCompile Include="Player.cpp">
       <Filter>ProgramFiles\Player</Filter>
     </ClCompile>
-    <ClCompile Include="Menu.cpp" />
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Menu.cpp">
       <Filter>ProgramFiles\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>ProgramFiles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

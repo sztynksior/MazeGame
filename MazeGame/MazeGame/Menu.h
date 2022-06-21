@@ -6,7 +6,7 @@
 #include <utility>
 
 #define MENU_BUTTONS 4
-class Menu : sf::Drawable
+class Menu : public sf::Drawable
 {
 private:
 	enum whichButton {EASY, MEDIUM, HARD, EXIT};
