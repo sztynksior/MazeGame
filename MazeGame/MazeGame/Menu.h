@@ -5,17 +5,27 @@
 #include <SFML/Graphics.hpp>
 #include <utility>
 
-#define MENU_BUTTONS 5
+#define MENU_BUTTONS 4
 class Menu : sf::Drawable
 {
 private:
-	enum whichButton {PLAY, EXIT, EASY, MEDIUM, HARD};
+	enum whichButton {EASY, MEDIUM, HARD, EXIT};
 
-	std::vector<std::pair<sf::Sprite, sf::Sprite>> menuButtons;
+	int windowWidth, windowLenght;
+	std::vector<std::pair<sf::Texture, sf::Texture>> menuButtonsTextures;
+	std::vector<sf::Sprite> menuButtons;
+	whichButton selectedButton = EASY;
+
+	void setSprites();
+	void setPositions();
+	void select(whichButton pWitchButton);
+	void unselect(whichButton pWitchButton);
 
 public:
 
 	void setTextures(TextureMenager& pTextureMenager);
+	void moveUp();
+	void moveDown();
 
 };
 
