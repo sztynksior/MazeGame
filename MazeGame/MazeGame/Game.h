@@ -16,6 +16,7 @@ private:
 	int windowWidth;
 	int windowLength;
 	Player* player;
+	Maze* firstMaze;
 	Maze* maze;
 	Menu* menu;
 	int difficultyLevel;

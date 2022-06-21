@@ -126,6 +126,8 @@ void Game::runGame()
                 {
                     if (event.key.code == sf::Keyboard::Escape)
                     {
+                        this->maze = this->firstMaze->copy(0);
+                        this->player->setPosition({ 1 * 16, 1 * 16 });
                         inGame = false;
                     }
                 }
@@ -164,6 +166,8 @@ void Game::setMaze(Maze* pMaze)
 {
     this->maze = pMaze;
     pMaze = NULL;
+
+    this->firstMaze = this->maze->copy(0);
 }
 
 void Game::setMenu(Menu* pMenu, TextureMenager& pTextureMenager)
