@@ -98,6 +98,14 @@ SquareMaze::SquareMaze(sf::Texture& pFloorTexture, sf::Texture& pWallTexture, sf
 	this->createMaze();
 }
 
+SquareMaze::SquareMaze(MazeElement* pFloor, MazeElement* pWall, MazeElement* pDoor, sf::Vector2f pInitialPosition, int pMaxMazeX, int pMaxMazeY)
+	: Maze(pFloor, pWall, pDoor, pInitialPosition, pMaxMazeX, pMaxMazeY);
+{
+	this->mazePlan = new SquareMazeGenerator(pMaxMazeX, pMaxMazeY, { pMaxMazeX / 2,  pMaxMazeY - 1 });
+
+	this->createMaze();
+}
+
 void SquareMaze::draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const
 {
 	for (int i = 0; i < this->maxMazeX * 2 + 1; i++)

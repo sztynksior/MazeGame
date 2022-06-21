@@ -27,10 +27,17 @@ protected:
 public:
 
 	Maze(sf::Texture& pFloorTexture, sf::Texture& pWallTexture, sf::Texture& pDoorTexture, sf::Vector2f pInitialPosition, int pMaxMazeX, int pMaxMazeY);
+	Maze(MazeElement* pFloor, MazeElement* pWall, MazeElement* pDoor, sf::Vector2f pInitialPosition, int pMaxMazeX, int pMaxMazeY);
 	~Maze();
 
 	virtual void draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const = 0;
 	std::vector<std::vector<MazeElement*>>& getMazeLayout();
+	int getMaxMazeX();
+	int getMaxMazeY();
+	sf::Vector2f getInitialPosition();
+	sf::Texture getFloorTexture();
+	sf::Texture getWallTexture();
+	sf::Texture getDoorTexture();
 };
 
 #endif // !MAZE_H

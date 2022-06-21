@@ -17,6 +17,7 @@ private:
 public:
 
 	SquareMaze(sf::Texture& pFloorTexture, sf::Texture& pWallTexture, sf::Texture& pDoorTexture, sf::Vector2f pInitialPosition, int pMaxMazeX, int pMaxMazeY);
+	SquareMaze(MazeElement* pFloor, MazeElement* pWall, MazeElement* pDoor, sf::Vector2f pInitialPosition, int pMaxMazeX, int pMaxMazeY);
 
 	void draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const;
 };
