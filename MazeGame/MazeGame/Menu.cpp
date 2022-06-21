@@ -4,15 +4,23 @@ void Menu::setSprites()
 {
 	sf::Vector2f textureSize(this->menuButtonsTextures[EASY].first.getSize().x, this->menuButtonsTextures[EASY].first.getSize().y);
 
-	this->menuButtons[EASY].setTexture(this->menuButtonsTextures[EASY].second);
-	this->menuButtons[MEDIUM].setTexture(this->menuButtonsTextures[MEDIUM].first);
-	this->menuButtons[HARD].setTexture(this->menuButtonsTextures[HARD].first);
-	this->menuButtons[EXIT].setTexture(this->menuButtonsTextures[EXIT].first);
+	this->menuButtons.push_back(sf::Sprite(this->menuButtonsTextures[EASY].second));
+	this->menuButtons.push_back(sf::Sprite(this->menuButtonsTextures[MEDIUM].second));
+	this->menuButtons.push_back(sf::Sprite(this->menuButtonsTextures[HARD].second));
+	this->menuButtons.push_back(sf::Sprite(this->menuButtonsTextures[EXIT].second));
 
 	this->menuButtons[EASY].setPosition(sf::Vector2f((this->windowWidth / 2) - (textureSize.x / 2), this->windowLenght / MENU_BUTTONS * 1));
 	this->menuButtons[MEDIUM].setPosition(sf::Vector2f((this->windowWidth / 2) - (textureSize.x / 2), this->windowLenght / MENU_BUTTONS * 1));
 	this->menuButtons[HARD].setPosition(sf::Vector2f((this->windowWidth / 2) - (textureSize.x / 2), this->windowLenght / MENU_BUTTONS * 1));
 	this->menuButtons[EXIT].setPosition(sf::Vector2f((this->windowWidth / 2) - (textureSize.x / 2), this->windowLenght / MENU_BUTTONS * 1));
+}
+
+void Menu::draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const
+{
+	for (sf::Sprite i : this->menuButtons)
+	{
+		pTarget.draw(i, pStates);
+	}
 }
 
 Menu::Menu(int pWindowWidth, int pWindowLenght)
@@ -23,7 +31,7 @@ Menu::Menu(int pWindowWidth, int pWindowLenght)
 
 void Menu::setTextures(TextureMenager& pTextureMenager)
 {
-	this->menuButtonsTextures.push_back({ pTextureMenager.getTextureWithGivenName("EasyBytton") ,pTextureMenager.getTextureWithGivenName("SelectedEasyBytton") });
+	this->menuButtonsTextures.push_back({ pTextureMenager.getTextureWithGivenName("EasyButton") ,pTextureMenager.getTextureWithGivenName("SelectedEasyButton") });
 
 	this->menuButtonsTextures.push_back({ pTextureMenager.getTextureWithGivenName("MediumButton") ,pTextureMenager.getTextureWithGivenName("SelectedMediumButton") });
 
