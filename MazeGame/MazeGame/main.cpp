@@ -15,8 +15,8 @@ int main()
 
     Game& Game1 = Game::getInstance(900, 900);
 
-    Game1.setPlayer(new Player(T1.getTextureWithGivenName("Player"), { 1 * 16, 0 }));
-    Game1.setMaze(new SquareMaze(T1.getTextureWithGivenName("SquareFloor"), T1.getTextureWithGivenName("SquareWall"), T1.getTextureWithGivenName("SquareDoor"), { 0, 0 }, 20, 20));
+    Game1.setPlayer(new Player(T1.getTextureWithGivenName("Player"), { 1 * 16, 1 * 16 }));
+    Game1.setMaze(new SquareMaze(T1.getTextureWithGivenName("SquareFloor"), T1.getTextureWithGivenName("SquareWall"), T1.getTextureWithGivenName("SquareDoor"), { 0, 0 }, 5, 5));
 
     Game1.runGame();
 }

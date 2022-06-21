@@ -32,6 +32,7 @@ public:
 	void runGame();
 	void setPlayer(Player* pPlayer);
 	void setMaze(Maze* pMaze);
+	void nextLevel(int pDeltaMazeSize);
 };
 
 #endif // !GAME_H

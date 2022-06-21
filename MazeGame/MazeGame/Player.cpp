@@ -1,9 +1,5 @@
 #include "Player.h"
 
-Player::Player()
-{
-}
-
 Player::Player(sf::Texture& pTexture, sf::Vector2f pStartingPosition)
 {
     this->sprite.setTexture(pTexture);

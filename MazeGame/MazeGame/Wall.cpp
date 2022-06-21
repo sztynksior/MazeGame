@@ -11,7 +11,7 @@ Wall::Wall(sf::Texture& pTexture) : MazeElement(pTexture)
 
 std::string Wall::onCollision()
 {
-	return "wall";
+	return "notPassable";
 }
 
 MazeElement* Wall::copy()

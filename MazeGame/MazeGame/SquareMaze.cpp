@@ -14,7 +14,7 @@ SquareMaze::SquareMaze(const SquareMaze& pSquareMaze, int pDeltaSize)
 		this->spritesSize = this->door->getSpriteSize();
 	}
 
-	this->mazePlan = new SquareMazeGenerator(this->maxMazeX + pDeltaSize, this->maxMazeX + pDeltaSize, { (this->maxMazeX + pDeltaSize) / 2,  (this->maxMazeX + pDeltaSize) - 1 });
+	this->mazePlan = new SquareMazeGenerator(this->maxMazeX, this->maxMazeX, { (this->maxMazeX) / 2,  (this->maxMazeX) - 1 });
 
 	this->createMaze();
 }
@@ -113,14 +113,6 @@ void SquareMaze::setingPositionsOfSprites()
 
 SquareMaze::SquareMaze(sf::Texture& pFloorTexture, sf::Texture& pWallTexture, sf::Texture& pDoorTexture, sf::Vector2f pInitialPosition, int pMaxMazeX, int pMaxMazeY)
 	: Maze(pFloorTexture, pWallTexture, pDoorTexture, pInitialPosition, pMaxMazeX, pMaxMazeY)
-{
-	this->mazePlan = new SquareMazeGenerator(pMaxMazeX, pMaxMazeY, { pMaxMazeX / 2,  pMaxMazeY - 1 });
-
-	this->createMaze();
-}
-
-SquareMaze::SquareMaze(MazeElement* pFloor, MazeElement* pWall, MazeElement* pDoor, sf::Vector2f pInitialPosition, int pMaxMazeX, int pMaxMazeY)
-	: Maze(pFloor, pWall, pDoor, pInitialPosition, pMaxMazeX, pMaxMazeY);
 {
 	this->mazePlan = new SquareMazeGenerator(pMaxMazeX, pMaxMazeY, { pMaxMazeX / 2,  pMaxMazeY - 1 });
 

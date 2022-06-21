@@ -17,7 +17,7 @@ private:
 
 public:
 
-	Player();
+	Player() {};
 	Player(sf::Texture& pTexture, sf::Vector2f pStartingPosition);
 	void setingMoveDirectionOnKeyPressed();
 	void movement();

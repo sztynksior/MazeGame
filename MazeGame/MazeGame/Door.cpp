@@ -3,6 +3,7 @@
 Door::Door(const Door& pDoor)
 {
 	this->sprite = pDoor.sprite;
+	this->isFinish = false;
 }
 
 Door::Door(sf::Texture& pTexture) : MazeElement(pTexture)
@@ -24,9 +25,4 @@ std::string Door::onCollision()
 MazeElement* Door::copy()
 {
 	return new Door(*this);
-}
-
-void Door::setItAsFinish()
-{
-	this->isFinish = true;
 }

@@ -8,6 +8,7 @@ MazeElement::MazeElement(sf::Texture& pTexture)
 {
 	this->sprite.setTexture(pTexture);
 	this->sprite.setPosition({ 0, 0 });
+	this->isFinish = false;
 }
 
 void MazeElement::draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const

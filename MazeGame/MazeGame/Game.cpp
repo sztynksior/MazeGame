@@ -14,13 +14,15 @@ void Game::collision()
         {
             if (this->player->getNextPosition() == j->getSpritePosition())
             {
-                if (j->onCollision() == "wall")
+                if (j->onCollision() == "notPassable")
                 {
                     this->player->stopMovement();
                     return;
                 }
-                else if (j->onCollision() == "door")
+                else if (j->onCollision() == "finish")
                 {
+                    this->player->stopMovement();
+                    this->nextLevel(2);
                     return;
                 }
                 else if (j->onCollision() == "flor")
@@ -70,11 +72,19 @@ void Game::runGame()
 void Game::setPlayer(Player* pPlayer)
 {
     this->player = pPlayer;
-    pPlayer = NULL;
+
 }
 
 void Game::setMaze(Maze* pMaze)
 {
     this->maze = pMaze;
     pMaze = NULL;
+}
+
+void Game::nextLevel(int pDeltaMazeSize)
+{
+    Maze* tMazePointer = this->maze->copy(pDeltaMazeSize);
+    this->player->setPosition({ 1 * 16, 1 * 16 });
+    delete this->maze;
+    this->maze = tMazePointer;
 }
