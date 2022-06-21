@@ -17,10 +17,27 @@ void Menu::setSprites()
 
 void Menu::moveUp()
 {
+	if (this->selectedButton - 1 >= 0)
+	{
+		this->menuButtons[selectedButton].setTexture(this->menuButtonsTextures[selectedButton].first);
+		this->selectedButton--;
+		this->menuButtons[selectedButton].setTexture(this->menuButtonsTextures[selectedButton].second);
+	}
 }
 
 void Menu::moveDown()
 {
+	if (this->selectedButton + 1 < MENU_BUTTONS)
+	{
+		this->menuButtons[selectedButton].setTexture(this->menuButtonsTextures[selectedButton].first);
+		this->selectedButton++;
+		this->menuButtons[selectedButton].setTexture(this->menuButtonsTextures[selectedButton].second);
+	}
+}
+
+int Menu::getPreessedButton()
+{
+	return this->selectedButton;
 }
 
 void Menu::draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const

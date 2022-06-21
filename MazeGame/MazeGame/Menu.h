@@ -14,7 +14,7 @@ private:
 	int windowWidth, windowLenght;
 	std::vector<std::pair<sf::Texture, sf::Texture>> menuButtonsTextures;
 	std::vector<sf::Sprite> menuButtons;
-	whichButton selectedButton = EASY;
+	int selectedButton = 0;
 
 	void setPositions();
 	void select(whichButton pWitchButton);
@@ -28,6 +28,7 @@ public:
 	void setSprites();
 	void moveUp();
 	void moveDown();
+	int getPreessedButton();
 
 	void draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const;
 

@@ -50,7 +50,7 @@ void Game::runGame()
     sf::RenderWindow window(sf::VideoMode(this->windowWidth, this->windowLength), "MazeGame");
     window.setVerticalSyncEnabled(true);
 
-
+    bool inGame = false;
 
     while (window.isOpen())
     {
@@ -59,15 +59,67 @@ void Game::runGame()
         {
             if (event.type == sf::Event::Closed)
                 window.close();
+
+            if (!inGame)
+            {
+                switch (event.type)
+                {
+                case sf::Event::KeyReleased:
+
+                    switch (event.key.code)
+                    {
+                    case sf::Keyboard::Up:
+                    {
+                        this->menu->moveUp();
+                        break;
+                    }
+                    case sf::Keyboard::Down:
+                    {
+                        this->menu->moveDown();
+                        break;
+                    }
+                    case sf::Keyboard::Return:
+                    {
+                        switch (this->menu->getPreessedButton())
+                        {
+                        case 0:
+                        {
+                            break;
+                        }
+                        case 1:
+                        {
+                            break;
+                        }
+                        case 2:
+                        {
+                            break;
+                        }
+                        case 3:
+                        {
+                            window.close();
+                            break;
+                        }
+                        }
+                    }
+                    default:
+                    {
+                        break;
+                    }
+                    }
+
+                default:
+                    break;
+                }
+            }
         }
-        this->player->setingMoveDirectionOnKeyPressed();
-        this->collision();
-        this->player->movement();
+      //  this->player->setingMoveDirectionOnKeyPressed();
+      //  this->collision();
+      //  this->player->movement();
  
         window.clear();
-        //window.draw(*this->menu);
-        window.draw(*this->maze);
-        window.draw(*this->player);
+        window.draw(*this->menu);
+       // window.draw(*this->maze);
+       // window.draw(*this->player);
         window.display();
     }
 }
