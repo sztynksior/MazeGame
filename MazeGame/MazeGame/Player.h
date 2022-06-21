@@ -24,6 +24,7 @@ public:
 	sf::Vector2f getNextPosition();
 	void draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const;
 	void stopMovement();
+	void setPosition(sf::Vector2f pPosition);
 };
 
 #endif // !PLAYER_H

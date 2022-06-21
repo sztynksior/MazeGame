@@ -147,3 +147,8 @@ void Player::stopMovement()
     }
 }
 
+void Player::setPosition(sf::Vector2f pPosition)
+{
+    this->sprite.setPosition(pPosition);
+}
+
