@@ -9,7 +9,7 @@
 class Menu : sf::Drawable
 {
 private:
-	enum class whichButton {PLAY, EXIT, EASY, MEDIUM, HARD};
+	enum whichButton {PLAY, EXIT, EASY, MEDIUM, HARD};
 
 	std::vector<std::pair<sf::Sprite, sf::Sprite>> menuButtons;
 

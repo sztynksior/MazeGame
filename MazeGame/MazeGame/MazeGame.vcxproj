@@ -149,6 +149,7 @@
     <ClCompile Include="MazeCell.cpp" />
     <ClCompile Include="MazeElement.cpp" />
     <ClCompile Include="MazeGenerator.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SquareMaze.cpp" />
     <ClCompile Include="SquareMazeCell.cpp" />
@@ -164,6 +165,7 @@
     <ClInclude Include="MazeCell.h" />
     <ClInclude Include="MazeElement.h" />
     <ClInclude Include="MazeGenerator.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="SquareMaze.h" />
     <ClInclude Include="SquareMazeCell.h" />
