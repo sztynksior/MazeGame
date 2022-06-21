@@ -19,7 +19,7 @@ private:
 
 	Game(int pWidth, int pLength);
 
-	void collision(Player* pPlayer, Maze* pMaze);
+	void collision();
 
 public:
 

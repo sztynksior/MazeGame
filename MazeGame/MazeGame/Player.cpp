@@ -12,10 +12,11 @@ Player::Player(sf::Texture& pTexture, sf::Vector2f pStartingPosition)
     this->movespeed = 1.0;
     this->nextPosition = this->sprite.getPosition();
 
-    for (bool direction : this->isMovingInDirection)
+    for (bool& direction : this->isMovingInDirection)
     {
         direction = false;
     }
+
 }
 
 void Player::setingMoveDirectionOnKeyPressed()
@@ -28,7 +29,6 @@ void Player::setingMoveDirectionOnKeyPressed()
         if (walking == false)
         {
             this->nextPosition.y = position.y - spriteSize;
-
             this->isMovingInDirection[UP] = true;
             walking = true;
         }
@@ -97,6 +97,7 @@ void Player::movement()
                 this->isMovingInDirection[DOWN] = false;
             }
         }
+
         if (this->isMovingInDirection[LEFT] == true)
         {
             position.x -= movespeed;
@@ -138,7 +139,9 @@ void Player::stopMovement()
 {
     this->walking = false;
 
-    for (bool i : this->isMovingInDirection)
+    this->nextPosition = this->sprite.getPosition();
+
+    for (bool& i : this->isMovingInDirection)
     {
         i = false;
     }

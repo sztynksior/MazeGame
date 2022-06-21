@@ -13,6 +13,7 @@ private:
 	bool isMovingInDirection[4];
 	bool walking;
 	sf::Vector2f nextPosition;
+	sf::Vector2f previousPosition;
 
 public:
 

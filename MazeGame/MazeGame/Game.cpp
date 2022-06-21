@@ -6,9 +6,30 @@ Game::Game(int pWidth, int pLength)
     this->windowLength = pLength;
 }
 
-void Game::collision(Player* pPlayer, Maze* pMaze)
+void Game::collision()
 {
-
+    for (std::vector<MazeElement*> i : this->maze->getMazeLayout())
+    {
+        for (MazeElement* j : i)
+        {
+            if (this->player->getNextPosition() == j->getSpritePosition())
+            {
+                if (j->onCollision() == "wall")
+                {
+                    this->player->stopMovement();
+                    return;
+                }
+                else if (j->onCollision() == "door")
+                {
+                    return;
+                }
+                else if (j->onCollision() == "flor")
+                {
+                    return;
+                }
+            }
+        }
+    }
 }
 
 Game& Game::getInstance(int pWidth, int pLength)
@@ -36,6 +57,7 @@ void Game::runGame()
                 window.close();
         }
         this->player->setingMoveDirectionOnKeyPressed();
+        this->collision();
         this->player->movement();
 
         window.clear();
