@@ -23,9 +23,13 @@ private:
 
 public:
 
+	Menu(int pWindowWidth,int  pWindowLenght);
+
 	void setTextures(TextureMenager& pTextureMenager);
 	void moveUp();
 	void moveDown();
+
+	void draw();
 
 };
 

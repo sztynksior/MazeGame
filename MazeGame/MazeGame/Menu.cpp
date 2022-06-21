@@ -15,6 +15,12 @@ void Menu::setSprites()
 	this->menuButtons[EXIT].setPosition(sf::Vector2f((this->windowWidth / 2) - (textureSize.x / 2), this->windowLenght / MENU_BUTTONS * 1));
 }
 
+Menu::Menu(int pWindowWidth, int pWindowLenght)
+{
+	this->windowWidth = pWindowWidth;
+	this->windowLenght = pWindowLenght;
+}
+
 void Menu::setTextures(TextureMenager& pTextureMenager)
 {
 	this->menuButtonsTextures.push_back({ pTextureMenager.getTextureWithGivenName("EasyBytton") ,pTextureMenager.getTextureWithGivenName("SelectedEasyBytton") });
