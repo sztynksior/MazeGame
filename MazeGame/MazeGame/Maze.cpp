@@ -1,25 +1,14 @@
 #include "Maze.h"
 
+Maze::Maze()
+{
+}
+
 Maze::Maze(sf::Texture& pFloorTexture, sf::Texture& pWallTexture, sf::Texture& pDoorTexture, sf::Vector2f pInitialPosition, int pMaxMazeX, int pMaxMazeY)
 {
 	this->floor = new Floor(pFloorTexture);
 	this->wall = new Wall(pWallTexture);
 	this->door = new Door(pDoorTexture);
-	this->initialPosition = pInitialPosition;
-	this->maxMazeX = pMaxMazeX;
-	this->maxMazeY = pMaxMazeY;
-
-	if (this->door->getSpriteSize() == this->floor->getSpriteSize() and this->floor->getSpriteSize() == this->wall->getSpriteSize())
-	{
-		this->spritesSize = this->door->getSpriteSize();
-	}
-}
-
-Maze::Maze(MazeElement* pFloor, MazeElement* pWall, MazeElement* pDoor, sf::Vector2f pInitialPosition, int pMaxMazeX, int pMaxMazeY)
-{
-	this->floor = pFloor;
-	this->wall = pWall;
-	this->door = pDoor;
 	this->initialPosition = pInitialPosition;
 	this->maxMazeX = pMaxMazeX;
 	this->maxMazeY = pMaxMazeY;
@@ -48,24 +37,4 @@ Maze::~Maze()
 std::vector<std::vector<MazeElement*>>& Maze::getMazeLayout()
 {
 	return this->mazeLayout;
-}
-
-int Maze::getMaxMazeX()
-{
-	return this->maxMazeX;
-}
-
-int Maze::getMaxMazeY()
-{
-	return this->maxMazeY;
-}
-
-sf::Vector2f Maze::getInitialPosition()
-{
-	return this->initialPosition;
-}
-
-sf::Texture Maze::getFloorTexture()
-{
-	return this->floor->;
 }

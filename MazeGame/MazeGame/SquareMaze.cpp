@@ -1,5 +1,24 @@
 #include "SquareMaze.h"
 
+SquareMaze::SquareMaze(const SquareMaze& pSquareMaze, int pDeltaSize)
+{
+	this->floor = pSquareMaze.floor->copy();
+	this->wall = pSquareMaze.wall->copy();
+	this->door = pSquareMaze.door->copy();
+	this->maxMazeX = pSquareMaze.maxMazeX + pDeltaSize;
+	this->maxMazeY = pSquareMaze.maxMazeY + pDeltaSize;
+	this->initialPosition = pSquareMaze.initialPosition;
+
+	if (this->door->getSpriteSize() == this->floor->getSpriteSize() and this->floor->getSpriteSize() == this->wall->getSpriteSize())
+	{
+		this->spritesSize = this->door->getSpriteSize();
+	}
+
+	this->mazePlan = new SquareMazeGenerator(this->maxMazeX + pDeltaSize, this->maxMazeX + pDeltaSize, { (this->maxMazeX + pDeltaSize) / 2,  (this->maxMazeX + pDeltaSize) - 1 });
+
+	this->createMaze();
+}
+
 void SquareMaze::createMaze()
 {
 	this->defaultMazeInicialization();
@@ -104,6 +123,11 @@ SquareMaze::SquareMaze(MazeElement* pFloor, MazeElement* pWall, MazeElement* pDo
 	this->mazePlan = new SquareMazeGenerator(pMaxMazeX, pMaxMazeY, { pMaxMazeX / 2,  pMaxMazeY - 1 });
 
 	this->createMaze();
+}
+
+Maze* SquareMaze::copy(int pDeltaSize)
+{
+	return new SquareMaze(*this, pDeltaSize);
 }
 
 void SquareMaze::draw(sf::RenderTarget& pTarget, sf::RenderStates pStates) const
