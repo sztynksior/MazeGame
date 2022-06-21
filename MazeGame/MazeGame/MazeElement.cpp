@@ -29,3 +29,8 @@ sf::Vector2f MazeElement::getSpritePosition()
 {
 	return this->sprite.getPosition();
 }
+
+void MazeElement::setItAsFinish()
+{
+	this->isFinish = true;
+}

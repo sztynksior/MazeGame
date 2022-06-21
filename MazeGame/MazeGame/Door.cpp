@@ -11,10 +11,22 @@ Door::Door(sf::Texture& pTexture) : MazeElement(pTexture)
 
 std::string Door::onCollision()
 {
-	return "door";
+	if (isFinish)
+	{
+		return "finish";
+	}
+	else
+	{
+		return "notPassable";
+	}
 }
 
 MazeElement* Door::copy()
 {
 	return new Door(*this);
+}
+
+void Door::setItAsFinish()
+{
+	this->isFinish = true;
 }

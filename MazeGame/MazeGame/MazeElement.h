@@ -9,6 +9,7 @@ class MazeElement : sf::Drawable
 {
 protected:
 
+	bool isFinish;
 	sf::Sprite sprite;
 
 public:
@@ -22,6 +23,7 @@ public:
 	sf::Vector2f getSpritePosition();
 	virtual MazeElement* copy() = 0;
 	virtual std::string onCollision() = 0; // TO DO: ZMIENIÆ!!!!
+	void setItAsFinish();
 
 };
 

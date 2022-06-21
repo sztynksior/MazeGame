@@ -77,6 +77,8 @@ void SquareMaze::defaultMazeInicialization()
 	this->mazeLayout[1][0] = this->door->copy();
 
 	this->mazeLayout[this->maxMazeX * 2 - 1][this->maxMazeY * 2] = this->door->copy();
+
+	this->mazeLayout[this->maxMazeX * 2 - 1][this->maxMazeY * 2]->setItAsFinish();
 }
 
 void SquareMaze::makingPaths()

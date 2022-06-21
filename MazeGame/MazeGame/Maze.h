@@ -26,7 +26,7 @@ protected:
 
 public:
 
-	Maze();
+	Maze() {}; //moze byc blad
 	Maze(sf::Texture& pFloorTexture, sf::Texture& pWallTexture, sf::Texture& pDoorTexture, sf::Vector2f pInitialPosition, int pMaxMazeX, int pMaxMazeY);
 	~Maze();
 

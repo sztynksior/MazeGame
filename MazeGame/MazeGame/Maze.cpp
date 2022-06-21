@@ -1,9 +1,5 @@
 #include "Maze.h"
 
-Maze::Maze()
-{
-}
-
 Maze::Maze(sf::Texture& pFloorTexture, sf::Texture& pWallTexture, sf::Texture& pDoorTexture, sf::Vector2f pInitialPosition, int pMaxMazeX, int pMaxMazeY)
 {
 	this->floor = new Floor(pFloorTexture);
