@@ -18,6 +18,7 @@ private:
 	Player* player;
 	Maze* maze;
 	Menu* menu;
+	int difficultyLevel;
 
 	Game(int pWidth, int pLength);
 
@@ -30,7 +31,7 @@ public:
 
 	Game(const Game&) = delete;
 	Game& operator=(const Game&) = delete;
-
+	
 	void runGame();
 	void setPlayer(Player* pPlayer);
 	void setMaze(Maze* pMaze);

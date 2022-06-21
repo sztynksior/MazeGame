@@ -22,7 +22,7 @@ void Game::collision()
                 else if (j->onCollision() == "finish")
                 {
                     this->player->stopMovement();
-                    this->nextLevel(2);
+                    this->nextLevel(this->difficultyLevel);
                     return;
                 }
                 else if (j->onCollision() == "flor")
@@ -84,14 +84,23 @@ void Game::runGame()
                         {
                         case 0:
                         {
+                            this->difficultyLevel = 1;
+                            inGame = true;
+
                             break;
                         }
                         case 1:
                         {
+                            this->difficultyLevel = 3;
+                            inGame = true;
+
                             break;
                         }
                         case 2:
                         {
+                            this->difficultyLevel = 5;
+                            inGame = true;
+
                             break;
                         }
                         case 3:
@@ -111,15 +120,36 @@ void Game::runGame()
                     break;
                 }
             }
+            else if(inGame)
+            {
+                if (event.type == sf::Event::KeyReleased)
+                {
+                    if (event.key.code == sf::Keyboard::Escape)
+                    {
+                        inGame = false;
+                    }
+                }
+            }
         }
-      //  this->player->setingMoveDirectionOnKeyPressed();
-      //  this->collision();
-      //  this->player->movement();
+
+        if (inGame)
+        {
+        this->player->setingMoveDirectionOnKeyPressed();
+        this->collision();
+        this->player->movement();
+        }
  
         window.clear();
-        window.draw(*this->menu);
-       // window.draw(*this->maze);
-       // window.draw(*this->player);
+        if (!inGame)
+        {
+            window.draw(*this->menu);
+        }
+        else if (inGame)
+        {
+        window.draw(*this->maze);
+        window.draw(*this->player);
+        }
+
         window.display();
     }
 }
